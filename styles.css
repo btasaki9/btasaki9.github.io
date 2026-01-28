@@ -16,7 +16,7 @@ h1,h2 {
 text-transform: uppercase;
 }
 
-header,section {
+section {
     height: 90vh;
     width: 60vh;
     float: left;
@@ -33,6 +33,8 @@ h1 {
 header {
     display: flex;
     align-items: center;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
 }
 
 header h1 {
@@ -40,8 +42,15 @@ header h1 {
     text-align: center;
 }
 
+main {
+    
+    align-items: center;
+   
+}
+
 section {
     background-color: antiquewhite;
+
 }
 
 #coolPic img {
