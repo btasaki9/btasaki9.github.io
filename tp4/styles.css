@@ -9,23 +9,52 @@
 
 #gameboard {
     position: relative;
-    width: var(--gameboardsize);
-    height: var(--gameboardsize);
+    /*width: var(--gameboardsize);
+    height: var(--gameboardsize);*/
+    width: calc(var(--gameboardsize) - var(--gameboardspacer));
+    height: calc(var(--gameboardsize) - var(--gameboardspacer));
     background-color: black;   
-    display: grid;
+    /*display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
-    gap: var(--gameboardspacer);
+    gap: var(--gameboardspacer);*/
 }
 
 .gamespace {
-    position: relative;
+    /* position: relative;
     background-color: white;
-    font-size: 10rem;
-    text-transform: uppercase;
-    text-align: center;
     display: flex;
     justify-content: center;
-    align-items: center;
-    font-family: "Titan One", sans-serif;
+    align-items: center;*/
+    font-family: "Titan One", sans-serif; 
+    font-size: 10rem;
+    overflow: hidden;
+    text-align: center;
+    text-transform: uppercase;
+    position: absolute;
+    background-color: white;
+    width: calc((var(--gameboardsize)/3) - var(--gameboardspacer));
+    height: calc((var(--gameboardsize)/3) - var(--gameboardspacer));
+
+}
+
+.row1 {
+    top: 0;
+}
+
+.row2 {
+    top: calc(var(--gameboardsize)/3 );
+}
+
+.row3 {
+    top: calc( (var(--gameboardsize)/3) * 2 );
+}
+.col1 {
+    left: 0;
+}
+.col2 {
+    left: calc(var(--gameboardsize)/3 );
+}
+.col3 {
+    left: calc( (var(--gameboardsize)/3) * 2 );
 }
