@@ -1,1 +1,61 @@
 /*styles for concentration board*/ 
+/*
+To achieve the flipping effect on a mouse-over (hover), we need to position and style the nest of DOM objects with a handful of special 3D-rotation CSS properties, a transform rotation applied on :hover, and transitions to make the rotations apply smoothly.
+*/
+
+* { box-sizing: border-box; }
+
+
+:root {
+  --cardSize: 200px; /* variable for card dimensions */
+}
+
+.card {
+  position: relative;
+  width: var(--cardSize);
+  height: var(--cardSize);
+  perspective: 500px;/* special CSS property relevant to 3D flips */
+  margin-bottom: 1rem; 
+}
+
+.cardContent {
+  position: absolute; /* positioning within the parent card object */
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s;
+  transform-style: preserve-3d; /* special CSS property relevant to 3D flips */
+}
+
+.card:hover .cardContent {
+  transform: rotateY(180deg); /* simulate a 3D flip */
+}
+
+.cardTop,
+.cardBottom {
+  position: absolute; /* positioning within the parent cardContent object */
+  text-align: center;
+  height: 100%;
+  width: 100%;
+  border: 2px solid darkblue;
+  font-size: 42px;
+  backface-visibility: hidden; /* special CSS property relevant to 3D flips */
+}
+
+.cardTop {
+  background-color: darkblue;
+  color: #eee;
+}
+
+.cardBottom {
+  background-color: #eee;
+  color: darkblue;
+  transform: rotateY(180deg); /* pre-flip so it appears on parent's flip */
+}
+
+.pair1 .cardBottom {
+    background-color: red;
+}
+
+.pair2 .cardBottom {
+    background-color: green;
+}
