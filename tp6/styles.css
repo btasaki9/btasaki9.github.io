@@ -21,14 +21,27 @@ main {
     grid-template-areas: 
         'current-info   current-info'
         'currenthum     currentwind'          .'
-        'future             .';
+        'future                   .';
 }
 
-#current-info{
+#current-info {
     position: relative;
     grid-area: current-info;
     background-color: salmon;
   
+}
+
+currenttemp {
+    position:absolute;
+    font-size: 5rem;
+    left: 1rem;
+}
+
+currentstatus {
+    position:absolute;
+    bottom: 1rem;
+    left: 1rem;
+    font-size: 2rem;
 }
 
 #currenthumidity {
