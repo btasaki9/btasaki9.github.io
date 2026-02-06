@@ -72,6 +72,14 @@ main {
     position: relative;
     grid-area: future;
     background-color: lightgoldenrodyellow;
+    overflow: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+#futureinfo::-webkit-scrollbar {
+    display: none;
 }
 
 .futureday {
