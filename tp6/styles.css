@@ -25,22 +25,26 @@ main {
 }
 
 #current-info{
+    position: relative;
     grid-area: current-info;
     background-color: salmon;
   
 }
 
 #currenthumidity {
+    position: relative;
     grid-area: currenthum;
     background-color: lightblue;
 }
 
 #currentwind {
+    position: relative;
     grid-area: currentwind;
     background-color: lightgray;
 }
 
 #futureinfo {
+    position: relative;
     grid-area: future;
     background-color: lightgoldenrodyellow;
 }
