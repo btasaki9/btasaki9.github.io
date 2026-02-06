@@ -1,10 +1,11 @@
 /*styles for weather app*/
 
 /***************general layout**********/
-:root{
-    --predictionboxwidth:70vw;
-    --predictionboxheight:20vh;
+:root {
+    --predictionboxwidth: 70vw;
+    --predictionboxheight: 20vh;
 }
+
 * {
     box-sizing: border-box;
 }
@@ -24,9 +25,9 @@ main {
     display: grid;
     grid-template-columns: 50vw 50vw;
     grid-template-rows: 50vh 30vh var(--predictionboxheight);
-    grid-template-areas: 
+    grid-template-areas:
         'current-info   current-info'
-        'currenthum     currentwind'      
+        'currenthum     currentwind'
         'future                   future';
 }
 
@@ -36,18 +37,18 @@ main {
     grid-area: current-info;
     background-color: salmon;
     border-bottom: 1px solid white;
-  
+
 }
 
 #currenttemp {
-    position:absolute;
+    position: absolute;
     font-size: 5rem;
     left: 1rem;
 }
 
 #currentstatus {
 
-    position:absolute;
+    position: absolute;
     bottom: 1rem;
     left: 1rem;
     font-size: 2rem;
@@ -100,4 +101,27 @@ main {
 .futureday:nth-child(3) {
     left: calc(var(--predictionboxwidth) * 2);
     border-right: none;
+
+}
+
+/**************desktop********/
+
+@media screen and (orientation: landscape) {
+    :root{
+        --predictionboxwidth:30vw;
+        --predictionboxheight: calc( 100vh/3 );
+    }
+    main {
+        grid-template-columns: 60vw 40vw;
+        grid-template-rows: var(--predictionboxheight) var(--predictionboxheight) var(--predictionboxheight);
+        grid-template-areas:
+            'current-info    currenthum'
+            'current-info    currentwind'
+            'current-info    future';
+    }
+
+    #current-info {
+        border-bottom: none;
+        border-right: 1px solid white;
+    }
 }
