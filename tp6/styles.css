@@ -1,1 +1,46 @@
 /*styles for weather app*/
+* {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+main {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-color: lightgray;
+
+    display: grid;
+    grid-template-columns: 50vw 50vw;
+    grid-template-rows: 50vh 30vh 20vh;
+    grid-template-areas: 
+        'current-info   current-info'
+        'currenthum     currentwind'          .'
+        'future             .';
+}
+
+#current-info{
+    grid-area: current-info;
+    background-color: salmon;
+  
+}
+
+#currenthumidity {
+    grid-area: currenthum;
+    background-color: lightblue;
+}
+
+#currentwind {
+    grid-area: currentwind;
+    background-color: lightgray;
+}
+
+#futureinfo {
+    grid-area: future;
+    background-color: lightgoldenrodyellow;
+}
