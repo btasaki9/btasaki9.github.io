@@ -15,9 +15,9 @@ To achieve the flipping effect on a mouse-over (hover), we need to position and 
 .card {
   position: relative;
   width: var(--cardSize);
-  height: var(--cardSize);
+  height: 27vw;
   perspective: 500px;/* special CSS property relevant to 3D flips */
-  margin-bottom: 1rem; 
+  margin-bottom: 2rem; 
 }
 
 .cardContent {
@@ -70,6 +70,22 @@ To achieve the flipping effect on a mouse-over (hover), we need to position and 
 
 .pair4 .cardBottom {
     background-color: gray;
+}
+
+.pair5 .cardBottom {
+    background-color: purple;
+}
+
+.pair6 .cardBottom {
+    background-color: orange;
+}
+
+.pair7 .cardBottom {
+    background-color: pink;
+}
+
+.pair8 .cardBottom {
+    background-color: cyan;
 }
 
 /*********************** game board formating */
