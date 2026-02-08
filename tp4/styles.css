@@ -11,18 +11,19 @@ body {
 }
 
 :root {
-    --gameboardsize: 80vh;
-    --gameboardspacer: 15px;
-    align-items: center;
-    background-color: #c5b7eb; 
+    --gameboardsize: min(80vh, 80vw); /* prefer 80% of viewport height but cap to viewport width */
+    --gameboardspacer: 15px; /* gap used when computing each cell size */
+    align-items: center; /* center-alignment helper for layout */
+    background-color: #c5b7eb; /* page background color variable */
 }
 
 #gameboard {
     position: relative;
+    --cell-size: calc((var(--gameboardsize)/3) - var(--gameboardspacer)); /* compute one cell size from board size and spacer */
     /*width: var(--gameboardsize);
     height: var(--gameboardsize);*/
-    width: calc(var(--gameboardsize) - var(--gameboardspacer));
-    height: calc(var(--gameboardsize) - var(--gameboardspacer));
+    width: calc(var(--gameboardsize) - var(--gameboardspacer)); /* overall board width derived from --gameboardsize minus outer spacer */
+    height: calc(var(--gameboardsize) - var(--gameboardspacer)); /* overall board height derived from --gameboardsize minus outer spacer */
     background-color: #9b2295;  
     border: 2rem solid #9b2295; /*makes the border of the gameboard*/
     border-radius: 25px;
@@ -34,22 +35,19 @@ body {
 }
 
 .gamespace {
-    /* position: relative;
-    background-color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;*/
-    font-family: "Titan One", sans-serif; 
-    font-size: 10rem;
-    overflow: hidden;
-    text-align: center;
+    font-family: "Titan One", sans-serif;
+    font-size: calc(var(--cell-size) * 0.8); /* set X/O size relative to cell size (60% of cell) */
+    text-align: center; /* center text horizontally */
     text-transform: uppercase;
     position: absolute;
     background-color: #f7f2ab;
-    width: calc((var(--gameboardsize)/3) - var(--gameboardspacer));
-    height: calc((var(--gameboardsize)/3) - var(--gameboardspacer));
-    border-radius: 15px; /*makes the gamespace edges round*/
-
+    width: var(--cell-size); /* use the computed cell size for width */
+    height: var(--cell-size); /* use the computed cell size for height */
+    border-radius: 15px; /* makes the gamespace edges round */
+    display: flex; /* enable flexbox for centering */
+    justify-content: center; /* center content horizontally within flex container */
+    align-items: center; /* center content vertically within flex container */
+    overflow: hidden; /* hide text overflow */
 }
 
 /* Style for X player - blue color */
@@ -81,4 +79,53 @@ body {
 }
 .col3 {
     left: calc( (var(--gameboardsize)/3) * 2 );
+}
+
+
+    
+
+
+/* Responsive adjustments */
+@media (max-width: 540px) {
+    :root {
+        --gameboardsize: min(70vh, 90vw); /* reduce overall board size on medium screens */
+        --gameboardspacer: 12px; /* slightly smaller spacer for medium screens */
+    }
+    body {
+        margin: 2rem 1rem; /* reduce body margin so board fits more easily */
+    }
+    #gameboard {
+        border-width: 1.5rem; /* thinner outer border on smaller screens */
+        border-radius: 20px; /* slightly smaller corner radius */
+    }
+    .gamespace {
+        font-size: calc(var(--cell-size) * 0.6); /* X/O stays relative to cell size (auto-updates when --gameboardsize changes) */
+        border-radius: 12px; /* smaller corner radius for cells */
+        /* width/height use --cell-size automatically; no need to re-calc here */
+    }
+}
+
+@media (max-width: 430px) {
+    :root {
+        --gameboardsize: 76vw; /* on very small phones, use viewport width to size board */
+        --gameboardspacer: 8px; /* tighten spacing so cells remain comfortably large */
+    }
+    body {
+        margin: 1rem; /* minimal page margin on small phones */
+    }
+    #gameboard {
+        border-width: 1rem; /* compact border on very small screens */
+        border-radius: 14px; /* compact corner radius */
+    }
+    .gamespace {
+        font-size: calc(var(--cell-size) * 0.6); /* X/O stays relative to cell size (auto-updates when --gameboardsize changes) */
+        border-radius: 10px; /* smallest cell corner radius */
+          font-family: "Titan One", sans-serif;
+          width: var(--cell-size); /* use the computed cell size for width */
+         height: var(--cell-size);
+        /* width/height use --cell-size automatically; no need to re-calc here */
+    }
+
+
+
 }
