@@ -23,8 +23,8 @@ body {
     height: var(--gameboardsize);*/
     width: calc(var(--gameboardsize) - var(--gameboardspacer));
     height: calc(var(--gameboardsize) - var(--gameboardspacer));
-    background-color: #5263ff;  
-    border: 2rem solid #5263ff; /*makes the border of the gameboard*/
+    background-color: #9b2295;  
+    border: 2rem solid #9b2295; /*makes the border of the gameboard*/
     border-radius: 25px;
     /*display: grid;
     grid-template-columns: 1fr 1fr 1fr;
