@@ -18,6 +18,7 @@ To achieve the flipping effect on a mouse-over (hover), we need to position and 
   height: 27vw;
   perspective: 500px;/* special CSS property relevant to 3D flips */
   margin-bottom: 2rem; 
+  border: 
 }
 
 .cardContent {
@@ -38,7 +39,8 @@ To achieve the flipping effect on a mouse-over (hover), we need to position and 
   text-align: center;
   height: 100%;
   width: 100%;
-  border: 2px solid darkblue;
+  border: 8px solid gold;
+  border-radius: 20px;
   font-size: 42px;
   backface-visibility: hidden; /* special CSS property relevant to 3D flips */
 }
@@ -50,26 +52,42 @@ To achieve the flipping effect on a mouse-over (hover), we need to position and 
 
 .cardBottom {
   background-color: #eee;
-  color: darkblue;
   transform: rotateY(180deg); /* pre-flip so it appears on parent's flip */
 }
 
 /*********************** specific card styling */
 
 .pair1 .cardBottom {
-    background-color: red;
+    background-color: #5bb941;
+    background-image: url("images/TLoZ_Series_Link_Render.webp");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
+
 .pair2 .cardBottom {
-    background-color: green;
+    background-color: #d396ee;
+    background-image: url("images/Zelda_-_Super_Smash_Bros._Ultimate.webp");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .pair3 .cardBottom {
-    background-color: yellow;
+    background-color: #9b0d16;
+    background-image: url("images/640px-AoI_Ganondorf_Artwork.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .pair4 .cardBottom {
-    background-color: gray;
+    background-color: lightgray;
+    background-image: url("images/Impa.webp");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
 }
 
 .pair5 .cardBottom {
@@ -86,6 +104,10 @@ To achieve the flipping effect on a mouse-over (hover), we need to position and 
 
 .pair8 .cardBottom {
     background-color: cyan;
+}
+
+.pair1 .cardTop {
+    background-image: url("img/TLoZ_Series_Link_Render.webp");
 }
 
 /*********************** game board formating */
