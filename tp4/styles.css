@@ -86,16 +86,17 @@ body {
 
 
 /* Responsive adjustments */
-@media (max-width: 540px) {
+@media (max-width: 1100px) {
     :root {
-        --gameboardsize: min(70vh, 90vw); /* reduce overall board size on medium screens */
+        --gameboardsize: min(60vh, 90vw); /* reduce overall board size on medium screens */
         --gameboardspacer: 12px; /* slightly smaller spacer for medium screens */
     }
     body {
         margin: 2rem 1rem; /* reduce body margin so board fits more easily */
     }
     #gameboard {
-        border-width: 1.5rem; /* thinner outer border on smaller screens */
+            margin: 25% auto; /* center the board with some vertical spacing */
+        border-width: 2rem; /* thinner outer border on smaller screens */
         border-radius: 20px; /* slightly smaller corner radius */
     }
     .gamespace {
@@ -114,6 +115,7 @@ body {
         margin: 1rem; /* minimal page margin on small phones */
     }
     #gameboard {
+         margin: 50% auto; /* center the board vertically and horizontally */
         border-width: 1rem; /* compact border on very small screens */
         border-radius: 14px; /* compact corner radius */
     }
