@@ -10,6 +10,25 @@ To achieve the flipping effect on a mouse-over (hover), we need to position and 
   --cardSize: 40vw; /* variable for card dimensions */
 }
 
+body {
+ background-image: url(images/tri_force_spaced.webp);
+ background-repeat: repeat;
+ background-color: #3d965a;
+ background-size: 250px 250px; 
+ 
+}
+ #gameboard {
+  display: flex; /*centers the cards*/
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  min-height: 100vh;
+  padding: 50px 80px 50px 80px;
+
+}
+
+
 /*********************** gereral card styling */
 
 .card {
@@ -39,7 +58,7 @@ To achieve the flipping effect on a mouse-over (hover), we need to position and 
   text-align: center;
   height: 100%;
   width: 100%;
-  border: 8px solid gold;
+  border: 40px solid #cc9933;
   border-radius: 20px;
   font-size: 42px;
   backface-visibility: hidden; /* special CSS property relevant to 3D flips */
@@ -48,6 +67,10 @@ To achieve the flipping effect on a mouse-over (hover), we need to position and 
 .cardTop {
   background-color: darkblue;
   color: #eee;
+  background-image: url("images/28135-8-the-legend-of-zelda-logo-clipart-thumb.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 70%;
 }
 
 .cardBottom {
@@ -60,7 +83,7 @@ To achieve the flipping effect on a mouse-over (hover), we need to position and 
 .pair1 .cardBottom {
     background-color: #5bb941;
     background-image: url("images/TLoZ_Series_Link_Render.webp");
-    background-size: contain;
+    background-size: 80%;
     background-repeat: no-repeat;
     background-position: center;
 }
@@ -69,7 +92,7 @@ To achieve the flipping effect on a mouse-over (hover), we need to position and 
 .pair2 .cardBottom {
     background-color: #d396ee;
     background-image: url("images/Zelda_-_Super_Smash_Bros._Ultimate.webp");
-    background-size: contain;
+    background-size: 80%;
     background-repeat: no-repeat;
     background-position: center;
 }
@@ -77,17 +100,17 @@ To achieve the flipping effect on a mouse-over (hover), we need to position and 
 .pair3 .cardBottom {
     background-color: #9b0d16;
     background-image: url("images/640px-AoI_Ganondorf_Artwork.png");
-    background-size: contain;
+    background-size: 80%;
     background-repeat: no-repeat;
     background-position: center;
 }
 
 .pair4 .cardBottom {
-    background-color: lightgray;
+    background-color: #733cae;
     background-image: url("images/200px-Serventofthegoddess.webp");
     background-repeat: no-repeat;
     background-position: center;
-    background-size: contain;
+    background-size: 60%;
 }
 
 .pair5 .cardBottom {
@@ -95,7 +118,7 @@ To achieve the flipping effect on a mouse-over (hover), we need to position and 
     background-image: url("images/800px-TotK_Bokoblin_Model.png");
     background-repeat: no-repeat;
     background-position: center;
-    background-size: contain;
+    background-size: 80%;
 }
 
 .pair6 .cardBottom {
@@ -103,7 +126,7 @@ To achieve the flipping effect on a mouse-over (hover), we need to position and 
     background-image: url("images/King_rhoam_art_thumb.webp");
     background-repeat: no-repeat;
     background-position: center;
-    background-size: contain;
+    background-size: 90%;
 }
 
 .pair7 .cardBottom {
@@ -111,21 +134,19 @@ To achieve the flipping effect on a mouse-over (hover), we need to position and 
     background-image: url("images/OoT_Darunia_Artwork.webp");
     background-repeat: no-repeat;
     background-position: center;
-    background-size: contain;
+    background-size: 80%;
 
 }
 
 .pair8 .cardBottom {
-    background-color: rgb(42, 236, 246);
+    background-color: rgb(80, 182, 246);
     background-image: url("images/800px-HWAoC_Mipha_Artwork.webp");
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
 }
 
-.pair1 .cardTop {
-    background-image: url("img/TLoZ_Series_Link_Render.webp");
-}
+
 
 /*********************** game board formating */
 
@@ -149,4 +170,54 @@ To achieve the flipping effect on a mouse-over (hover), we need to position and 
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
   }
+}
+
+@media only screen and (max-width: 1030px) and (min-width: 431px) {
+  .card {
+    width: 40vw;
+    height: 54vw;
+  }
+
+  .pair4 .cardBottom {
+    background-size: 200px;
+  }
+  
+  .pair7 .cardBottom {
+    background-size: 370px;
+  }
+  
+  .pair6 .cardBottom {
+    background-size: 400px;
+  }
+
+  .pair5 .cardBottom {
+    background-size: 370px;
+  }
+
+  .cardTop,
+.cardBottom {
+  border: 30px solid #cc9933;
+}
+
+
+}
+
+@media only screen and (max-width: 430px) {
+  .card {
+    width: 40vw;
+    height: 54vw;
+  }
+
+  body {
+ background-image: url(images/tri_force_spaced.webp);
+ background-repeat: repeat;
+ background-color: #3d965a;
+ background-size: 100px 100px; 
+}
+
+.cardTop,
+.cardBottom {
+  border: 10px solid #cc9933;
+}
+
 }
