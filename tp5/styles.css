@@ -58,7 +58,7 @@ body {
   text-align: center;
   height: 100%;
   width: 100%;
-  border: 40px solid #cc9933;
+  border: 20px solid #cc9933;
   border-radius: 20px;
   font-size: 42px;
   backface-visibility: hidden; /* special CSS property relevant to 3D flips */
@@ -178,26 +178,17 @@ body {
     height: 54vw;
   }
 
-  .pair4 .cardBottom {
-    background-size: 200px;
-  }
+ 
   
-  .pair7 .cardBottom {
-    background-size: 370px;
-  }
-  
-  .pair6 .cardBottom {
-    background-size: 400px;
-  }
-
-  .pair5 .cardBottom {
-    background-size: 370px;
-  }
-
   .cardTop,
 .cardBottom {
   border: 30px solid #cc9933;
 }
+
+ #gameboard {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+  }
 
 
 }
@@ -217,7 +208,7 @@ body {
 
 .cardTop,
 .cardBottom {
-  border: 10px solid #cc9933;
+  border: 5px solid #cc9933;
 }
 
 }
