@@ -91,19 +91,36 @@ To achieve the flipping effect on a mouse-over (hover), we need to position and 
 }
 
 .pair5 .cardBottom {
-    background-color: purple;
+    background-color: #f2b85f;
+    background-image: url("images/800px-TotK_Bokoblin_Model.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
 }
 
 .pair6 .cardBottom {
-    background-color: orange;
+    background-color: #f3f163;
+    background-image: url("images/King_rhoam_art_thumb.webp");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
 }
 
 .pair7 .cardBottom {
-    background-color: pink;
+    background-color: rgb(192, 127, 6);
+    background-image: url("images/OoT_Darunia_Artwork.webp");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
 }
 
 .pair8 .cardBottom {
-    background-color: cyan;
+    background-color: rgb(42, 236, 246);
+    background-image: url("images/800px-HWAoC_Mipha_Artwork.webp");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
 }
 
 .pair1 .cardTop {
