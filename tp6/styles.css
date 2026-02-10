@@ -21,6 +21,7 @@ main {
     width: 100vw;
     height: 100vh;
     background-color: lightgray;
+    color: white;
 
     display: grid;
     grid-template-columns: 50vw 50vw;
@@ -35,24 +36,33 @@ main {
 #current-info {
     position: relative;
     grid-area: current-info;
+    display: flex;
+    align-items: center;      /* centers vertically */
+    justify-content: center;   /* centers horizontally */
     background-color: salmon;
     border-bottom: 1px solid white;
+    
 
 }
 
 #currenttemp {
-    position: absolute;
-    font-size: 5rem;
-    left: 1rem;
+    font-size: 6rem;
 }
 
 #currentstatus {
-
     position: absolute;
-    bottom: 1rem;
-    left: 1rem;
-    font-size: 2rem;
+    bottom: 3rem;
+    
+    font-size: 2.5rem;
 }
+
+#location {
+    position: absolute;
+    top: 3rem;
+    font-size: 2rem;
+    
+}
+
 
 /**************current humidity********/
 
