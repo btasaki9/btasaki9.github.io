@@ -56,7 +56,7 @@ main {
 #currentstatus {
     position: absolute;
     bottom: 3rem;
-    
+    text-shadow: 1px 1px 2px black;
     font-size: 2.5rem;
 }
 
@@ -87,6 +87,7 @@ main {
     top: 1.5rem;
     font-size: 1.9rem;
 }
+
 #hum-percentage {
     position: absolute;
     bottom: 2.7rem;
@@ -136,7 +137,7 @@ main {
     position: absolute;
     width: var(--predictionboxwidth);
     height: var(--predictionboxheight);
-    border: 3px solid rgb(255, 255, 255);
+    border: 2px solid rgb(255, 255, 255);
     font-size: 1.8rem;
     text-align: center;
     padding-top: 0.7rem;
@@ -178,4 +179,84 @@ main {
         border-bottom: none;
         border-right: 1px solid white;
     }
+
+    #hum-label {
+    position: absolute;
+    top: .7rem;
+    font-size: 1.9rem;
+    }
+
+    #hum-percentage {
+    position: absolute;
+    bottom: .3rem;
+    }
+
+    #windlabel {
+    position: absolute;
+    top: .7rem;
+    font-size: 1.9rem;
+    }
+
+   #windspeed {
+
+    position: absolute;
+    bottom: .3rem;
+    font-size: 2rem;
+    }
+
+    .futureday {
+        font-size: 1.7rem;
+    }
+   
 }
+
+@media only screen and (max-width: 1030px) and (min-width: 413px) {
+    
+    #current-info {
+        background-size: cover;
+    }
+
+    #currenttemp {
+    font-size: 10rem;
+    }
+
+    #location {
+    font-size: 4rem;
+    }
+
+    #currentstatus {
+    bottom: 4rem;
+    font-size: 5rem;
+    }
+
+    #hum-label {
+    top: 3rem;
+    font-size: 3rem;
+    }
+
+    #hum-percentage {
+    font-size: 6rem;
+    bottom: 4rem;
+    }
+
+    #windlabel {
+    top: 3rem;
+    font-size: 3rem;
+　　　}
+
+　　#windspeed {
+
+    position: absolute;
+    bottom: 5rem;
+    font-size: 6rem;
+    }
+
+}
+
+
+
+
+
+
+
+   
