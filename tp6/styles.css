@@ -49,7 +49,7 @@ main {
 }
 
 #currenttemp {
-    font-size: 6rem;
+    font-size: 12vw;
     color: #a8e6f1;
 }
 
@@ -57,13 +57,13 @@ main {
     position: absolute;
     bottom: 3rem;
     text-shadow: 1px 1px 2px black;
-    font-size: 2.5rem;
+    font-size: 5vw;
 }
 
 #location {
     position: absolute;
     top: 3rem;
-    font-size: 2rem;
+    font-size: 4vw;
     
 }
 
@@ -79,13 +79,13 @@ main {
     display: flex;
     align-items: center;      /* centers vertically */
     justify-content: center;
-    font-size: 4rem;
+    font-size: 8vw;
 }
 
 #hum-label {
     position: absolute;
     top: 1.5rem;
-    font-size: 1.9rem;
+    font-size: 3.8vw;
 }
 
 #hum-percentage {
@@ -102,13 +102,13 @@ main {
     display: flex;
     align-items: center;      /* centers vertically */
     justify-content: center;
-    font-size: 2.5rem;
+    font-size: 5vw;
 }
 
 #windlabel {
     position: absolute;
     top: 1.5rem;
-    font-size: 1.9rem;
+    font-size: 3.8vw;
 }
 
 #windspeed {
@@ -138,7 +138,7 @@ main {
     width: var(--predictionboxwidth);
     height: var(--predictionboxheight);
     border: 2px solid rgb(255, 255, 255);
-    font-size: 1.8rem;
+    font-size: 3.5vw;
     text-align: center;
     padding-top: 0.7rem;
 
@@ -183,7 +183,7 @@ main {
     #hum-label {
     position: absolute;
     top: .7rem;
-    font-size: 1.9rem;
+    font-size: 3.8vw;
     }
 
     #hum-percentage {
@@ -194,18 +194,18 @@ main {
     #windlabel {
     position: absolute;
     top: .7rem;
-    font-size: 1.9rem;
+    font-size: 3.8vw;
     }
 
    #windspeed {
 
     position: absolute;
     bottom: .3rem;
-    font-size: 2rem;
+    font-size: 4vw;
     }
 
     .futureday {
-        font-size: 1.7rem;
+        font-size: 3.5vw;
     }
    
 }
@@ -217,43 +217,109 @@ main {
     }
 
     #currenttemp {
-    font-size: 10rem;
+    font-size: 12vw;
     }
 
     #location {
-    font-size: 4rem;
+    font-size: 4vw;
     }
 
     #currentstatus {
     bottom: 4rem;
-    font-size: 5rem;
+    font-size: 5vw;
+    }
+
+    #currenthumidity {
+    font-size: 8vw;
+    }
+
+    #currentwind {
+    font-size: 5vw;
     }
 
     #hum-label {
     top: 3rem;
-    font-size: 3rem;
+    font-size: 3vw;
     }
 
     #hum-percentage {
-    font-size: 6rem;
+    font-size: 8vw;
     bottom: 4rem;
     }
 
     #windlabel {
     top: 3rem;
-    font-size: 3rem;
-　　　}
+    font-size: 3vw;
+　　 }
 
-　　#windspeed {
-
+　　 #windspeed {
     position: absolute;
     bottom: 5rem;
-    font-size: 6rem;
+    font-size: 6vw;
+    }
+
+    .futureday {
+    font-size: 3.5vw;
+
     }
 
 }
 
+@media only screen and  (min-width: 1031px) {
+  
+      #current-info {
+        background-size: cover;
+    }
 
+    #currenttemp {
+    font-size: 12vw;
+    }
+
+    #location {
+    font-size: 4vw;
+    }
+
+    #currentstatus {
+    bottom: 4rem;
+    font-size: 5vw;
+    }
+
+    #currenthumidity {
+    font-size: 8vw;
+    
+    }
+
+    #currentwind {
+    font-size: 5vw;
+
+    }
+
+    #hum-label {
+    top: 3rem;
+    font-size: 3vw;
+    }
+
+    #hum-percentage {
+    font-size: 8vw;
+    bottom: 2vw;
+    }
+
+    #windlabel {
+    top: 3rem;
+    font-size: 3vw;
+　　 }
+
+　　 #windspeed {
+    position: absolute;
+    bottom: 3vw;
+    font-size: 6vw;
+    }
+
+    .futureday {
+    font-size: 3.5vw;
+
+    }
+}
 
 
 
