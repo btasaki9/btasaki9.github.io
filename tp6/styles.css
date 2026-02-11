@@ -82,16 +82,23 @@ main {
     font-size: 8vw;
 }
 
-#hum-label {
-    position: absolute;
-    top: 1.5rem;
-    font-size: 3.8vw;
+#currenthumidity #humidity {
+    text-align: center;
+    font-size: 7vw;
 }
 
-#hum-percentage {
-    position: absolute;
-    bottom: 2.7rem;
+
+#currenthumidity b {
+    font-size: 15vw;
 }
+
+#wind {
+    text-align: center;
+    font-size: 7vw;
+}
+
+
+/* humidity labels removed */
 
 /***************current wind********/
 #currentwind {
@@ -105,18 +112,7 @@ main {
     font-size: 5vw;
 }
 
-#windlabel {
-    position: absolute;
-    top: 1.5rem;
-    font-size: 3.8vw;
-}
 
-#windspeed {
-
-    position: absolute;
-    bottom: 2.7rem;
-    text-align: center; 
-}
 
 /***************future prediction********/
 #futureinfo {
@@ -180,29 +176,8 @@ main {
         border-right: 1px solid white;
     }
 
-    #hum-label {
-    position: absolute;
-    top: .7rem;
-    font-size: 3.8vw;
-    }
+    /* humidity labels removed */
 
-    #hum-percentage {
-    position: absolute;
-    bottom: .3rem;
-    }
-
-    #windlabel {
-    position: absolute;
-    top: .7rem;
-    font-size: 3.8vw;
-    }
-
-   #windspeed {
-
-    position: absolute;
-    bottom: .3rem;
-    font-size: 4vw;
-    }
 
     .futureday {
         font-size: 3.5vw;
@@ -237,26 +212,8 @@ main {
     font-size: 5vw;
     }
 
-    #hum-label {
-    top: 3rem;
-    font-size: 3vw;
-    }
+    /* humidity labels removed */
 
-    #hum-percentage {
-    font-size: 8vw;
-    bottom: 4rem;
-    }
-
-    #windlabel {
-    top: 3rem;
-    font-size: 3vw;
-　　 }
-
-　　 #windspeed {
-    position: absolute;
-    bottom: 5rem;
-    font-size: 6vw;
-    }
 
     .futureday {
     font-size: 3.5vw;
@@ -280,7 +237,7 @@ main {
     }
 
     #currentstatus {
-    bottom: 4rem;
+    bottom: 6rem;
     font-size: 5vw;
     }
 
@@ -294,26 +251,9 @@ main {
 
     }
 
-    #hum-label {
-    top: 3rem;
-    font-size: 3vw;
-    }
+    /* humidity labels removed */
 
-    #hum-percentage {
-    font-size: 8vw;
-    bottom: 2vw;
-    }
-
-    #windlabel {
-    top: 3rem;
-    font-size: 3vw;
-　　 }
-
-　　 #windspeed {
-    position: absolute;
-    bottom: 3vw;
-    font-size: 6vw;
-    }
+   
 
     .futureday {
     font-size: 3.5vw;
