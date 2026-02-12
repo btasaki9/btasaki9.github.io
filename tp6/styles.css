@@ -25,6 +25,8 @@ main {
     height: 100vh;
     background-color: lightgray;
     color: white;
+    text-shadow: 1px 1px 2px black;
+   
 
     display: grid;
     grid-template-columns: 50vw 50vw;
@@ -43,7 +45,7 @@ main {
     align-items: center;      /* centers vertically */
     justify-content: center;   /* centers horizontally */
     background-color: salmon;
-    border-bottom: 1px solid white;
+    
     background-image: url(images/360_F_302037028_WgdzBqp7MCTF0iITajUUVryCKJsyjOE6.jpg);
 
 }
@@ -56,7 +58,7 @@ main {
 #currentstatus {
     position: absolute;
     bottom: 3rem;
-    text-shadow: 1px 1px 2px black;
+    
     font-size: 10vw;
 }
 
@@ -64,7 +66,7 @@ main {
     position: absolute;
     top: 3rem;
     font-size: 9vw;
-    text-shadow: 1px 1px 2px black;
+    
     
 }
 
@@ -74,13 +76,15 @@ main {
 #currenthumidity {
     position: relative;
     grid-area: currenthum;
-    background-color: rgb(93, 93, 238);
-    border-bottom: 1px solid white;
-    border-right: 1px solid white;
+    color: rgb(207, 220, 243);
+   
     display: flex;
     align-items: center;      /* centers vertically */
     justify-content: center;
     font-size: 8vw;
+    background-image: url(images/166.jpg);
+    background-size: cover;
+    background-position: center;
 }
 
 #currenthumidity #humidity {
@@ -99,18 +103,20 @@ main {
 }
 
 
-/* humidity labels removed */
 
 /***************current wind********/
 #currentwind {
     position: relative;
     grid-area: currentwind;
-    background-color: rgb(114, 205, 120);
-    border-bottom: 1px solid white;
+    color: rgb(206, 198, 105);;
     display: flex;
     align-items: center;      /* centers vertically */
     justify-content: center;
     font-size: 5vw;
+    background-image: url(images/dandelion--taraxacum--in-the-wind-200194596-001-5c8d4453c9e77c00014a9d5d.jpg);
+    background-size: cover;
+    background-position: center;
+
 }
 
 
@@ -119,7 +125,7 @@ main {
 #futureinfo {
     position: relative;
     grid-area: future;
-    background-color: rgb(186, 186, 184);
+    background-color: rgb(207, 231, 240);
     overflow: auto;
     overflow-y: hidden;
     scrollbar-width: none;
@@ -139,6 +145,7 @@ main {
     text-align: center;
     padding-top: 0.7rem;
 
+
     
 }
 
@@ -154,6 +161,7 @@ main {
 
 .futuretemp {
     top: 2rem;
+    color:#a8e6f1
 }
 
 /**************desktop********/
@@ -174,7 +182,7 @@ main {
 
     #current-info {
         border-bottom: none;
-        border-right: 1px solid white;
+        border-right: 15px solid rgb(255, 255, 255);
     }
 
 
