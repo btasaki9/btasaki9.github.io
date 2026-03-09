@@ -37,7 +37,7 @@ body {
   height: 27vw;
   perspective: 500px;/* special CSS property relevant to 3D flips */
   margin-bottom: 2rem; 
-  border: 
+
 }
 
 .cardContent {
