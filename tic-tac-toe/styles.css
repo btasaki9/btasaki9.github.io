@@ -5,9 +5,24 @@
 body {
     align-items: center;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     margin: 4rem auto;
 
+}
+
+#currentPlayer {
+    font-family: "Nunito", sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+#gameResult {
+    font-family: "Nunito", sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
 }
 
 :root {
@@ -17,7 +32,7 @@ body {
     background-color: #c5b7eb; /* page background color variable */
 }
 
-#gameboard {
+#gameBoard {
     position: relative;
     --cell-size: calc((var(--gameboardsize)/3) - var(--gameboardspacer)); /* compute one cell size from board size and spacer */
     /*width: var(--gameboardsize);
@@ -34,7 +49,7 @@ body {
 
 }
 
-.gamespace {
+.gameSpace {
     font-family: "Titan One", sans-serif;
     font-size: calc(var(--cell-size) * 0.8); /* set X/O size relative to cell size (60% of cell) */
     text-align: center; /* center text horizontally */
@@ -60,25 +75,29 @@ body {
     color: red;
 }
 
-.row1 {
+/* Row and column positioning using IDs */
+#a1, #a2, #a3 {
     top: 0;
 }
 
-.row2 {
-    top: calc(var(--gameboardsize)/3 );
+#b1, #b2, #b3 {
+    top: calc(var(--gameboardsize)/3);
 }
 
-.row3 {
-    top: calc( (var(--gameboardsize)/3) * 2 );
+#c1, #c2, #c3 {
+    top: calc((var(--gameboardsize)/3) * 2);
 }
-.col1 {
+
+#a1, #b1, #c1 {
     left: 0;
 }
-.col2 {
-    left: calc(var(--gameboardsize)/3 );
+
+#a2, #b2, #c2 {
+    left: calc(var(--gameboardsize)/3);
 }
-.col3 {
-    left: calc( (var(--gameboardsize)/3) * 2 );
+
+#a3, #b3, #c3 {
+    left: calc((var(--gameboardsize)/3) * 2);
 }
 
 
@@ -86,7 +105,7 @@ body {
 
 
 /* Responsive adjustments */
-@media (max-width: 1100px) (min-width: 431px) {
+@media (max-width: 1100px) and (min-width: 431px) {
     :root {
         --gameboardsize: min(60vh, 90vw); /* reduce overall board size on medium screens */
         --gameboardspacer: 12px; /* slightly smaller spacer for medium screens */
@@ -94,12 +113,12 @@ body {
     body {
         margin: 2rem 1rem; /* reduce body margin so board fits more easily */
     }
-    #gameboard {
+    #gameBoard {
             margin: 25% auto; /* center the board with some vertical spacing */
         border-width: 2rem; /* thinner outer border on smaller screens */
         border-radius: 20px; /* slightly smaller corner radius */
     }
-    .gamespace {
+    .gameSpace {
         font-size: calc(var(--cell-size) * 0.6); /* X/O stays relative to cell size (auto-updates when --gameboardsize changes) */
         border-radius: 12px; /* smaller corner radius for cells */
         /* width/height use --cell-size automatically; no need to re-calc here */
@@ -114,12 +133,12 @@ body {
     body {
         margin: 1rem; /* minimal page margin on small phones */
     }
-    #gameboard {
+    #gameBoard {
          margin: 50% auto; /* center the board vertically and horizontally */
         border-width: 1rem; /* compact border on very small screens */
         border-radius: 14px; /* compact corner radius */
     }
-    .gamespace {
+    .gameSpace {
         font-size: calc(var(--cell-size) * 0.6); /* X/O stays relative to cell size (auto-updates when --gameboardsize changes) */
         border-radius: 10px; /* smallest cell corner radius */
         font-family: "Titan One", sans-serif;
@@ -127,7 +146,5 @@ body {
         height: var(--cell-size);
         /* width/height use --cell-size automatically; no need to re-calc here */
     }
-
-
-
 }
+

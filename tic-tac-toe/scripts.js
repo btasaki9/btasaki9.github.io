@@ -4,6 +4,8 @@ let rowA = [ "-", "-", "-" ];
 let rowB = [ "-", "-", "-" ];
 let rowC = [ "-", "-", "-" ];
 
+//track turns 
+let currentTurn = "x";
 
 
 
@@ -14,76 +16,62 @@ function checkGameboard(checkA,checkB,checkC) {
   //to compare the data
   
   
- //rows
-  if ( ( checkA[0] == checkA[1] ) && ( checkA[0] == checkA[2] ) ) {
-    if (checkA[0] == "x") resultValue = "x";
-    else if (checkA[0] == "o") resultValue = "o";
+ 
+    // check column 0
+    if (spaceMatch(a[0], b[0], c[0])) {
+        if (a[0] != "-") outcome = a[0]; // set outcome to winner if not "-"
+    }
+
+    // check column 1
+    if (spaceMatch(a[1], b[1], c[1])) {
+        if (a[1] != "-") outcome = a[1]; // set outcome to winner if not "-"
+    }
+
+    // check column 2
+    if (spaceMatch(a[2], b[2], c[2])) {
+        if (a[2] != "-") outcome = a[2]; // set outcome to winner if not "-"
+    }
+
+    // check row A
+    if (spaceMatch(a[0], a[1], a[2])) {
+        if (a[0] != "-") outcome = a[0]; // set outcome to winner if not "-"
+    }
+
+    // check row B
+    if (spaceMatch(b[0], b[1], b[2])) {
+        if (b[0] != "-") outcome = b[0]; // set outcome to winner if not "-"
+    }
+
+    // check row C
+    if (spaceMatch(c[0], c[1], c[2])) {
+        if (c[0] != "-") outcome = c[0]; // set outcome to winner if not "-"
+    }
+
+    // check diagonal from top left
+    if (spaceMatch(a[0], b[1], c[2])) {
+        if (a[0] != "-") outcome = a[0]; // set outcome to winner if not "-"
+    }
+
+    // check diagonal from bottom left
+    if (spaceMatch(c[0], b[1], a[2])) {
+        if (c[0] != "-") outcome = c[0]; // set outcome to winner if not "-"
+    }
+
+    return outcome; // return the final outcome
+}
+
     
-  }
-  
-    if ( ( checkB[0] == checkB[1] ) && ( checkB[0] == checkB[2] ) ) {
-    if (checkB[0] == "x") resultValue = "x";
-    else if (checkB[0] == "o") resultValue = "o";
-    
-  }
-  
-    if ( ( checkC[0] == checkC[1] ) && ( checkC[0] == checkC[2] ) ) {
-    if (checkC[0] == "x") resultValue = "x";
-    else if (checkC[0] == "o") resultValue = "o";
-    
-  }
-  
-  //columbs 
-    if ( ( checkA[0] == checkB[0] ) && ( checkB[0] == checkC[0] ) ) {
-    if (checkA[0] == "x") resultValue = "x";
-    else if (checkB[0] == "x") resultValue = "x";
-    else if (checkC[0] == "x") resultValue = "x";
-    else if (checkA[0] == "o") resultValue = "o";
-    else if (checkB[0] == "o") resultValue = "o";
-    else if (checkC[0] == "o") resultValue = "o";
-    
-  }
-  
-    if ( ( checkA[1] == checkB[1] ) && ( checkB[1] == checkC[1] ) ) {
-    if (checkA[1] == "x") resultValue = "x";
-    else if (checkB[1] == "x") resultValue = "x";
-    else if (checkC[1] == "x") resultValue = "x";
-    else if (checkA[1] == "o") resultValue = "o";
-    else if (checkB[1] == "o") resultValue = "o";
-    else if (checkC[1] == "o") resultValue = "o";
-    
-  }
-  
-   if ( ( checkA[2] == checkB[2] ) && ( checkB[2] == checkC[2] ) ) {
-    if (checkA[2] == "x") resultValue = "x";
-    else if (checkB[2] == "x") resultValue = "x";
-    else if (checkC[2] == "x") resultValue = "x";
-    else if (checkA[2] == "o") resultValue = "o";
-    else if (checkB[2] == "o") resultValue = "o";
-    else if (checkC[2] == "o") resultValue = "o";
-   }
-  
-  //diagnal
-  
- if ( ( checkA[0] == checkB[1] ) && ( checkB[1] == checkC[2] ) ) {
-    if (checkA[0] == "x") resultValue = "x";
-    else if (checkB[1] == "x") resultValue = "x";
-    else if (checkC[2] == "x") resultValue = "x";
-    else if (checkA[0] == "o") resultValue = "o";
-    else if (checkB[1] == "o") resultValue = "o";
-    else if (checkC[2] == "o") resultValue = "o";
- }
-  
-if ( ( checkA[2] == checkB[1] ) && ( checkB[1] == checkC[0] ) ) {
-    if (checkA[2] == "x") resultValue = "x";
-    else if (checkB[1] == "x") resultValue = "x";
-    else if (checkC[0] == "x") resultValue = "x";
-    else if (checkA[2] == "o") resultValue = "o";
-    else if (checkB[1] == "o") resultValue = "o";
-    else if (checkC[0] == "o") resultValue = "o";
- }
-  
-  return resultValue;
+
+ 
+
+
+//function for clicks 
+function clickSquare() {
+  //set space
+    this.innerHTML = currentTurn;
+    //flips turn back and forth 
+    if (currentTurn == "x") currentTurn = "o";
+    else currentTurn = "x";
 }
 
 
@@ -92,10 +80,9 @@ document.addEventListener("DOMContentLoaded", function() {
     //find all clickable spaces 
     let allSpaces = document.querySelectorAll(".gamespace");
 
-    for (x = 0; x < allSpaces.length; x++) {
-        allSpaces[x].addEventListener("click", function() {
-            this.innerHTML = "x";
-        });
+    // loop with "for-all" through all the clickable spaces
+    for (let eachSpace of allSpaces) {
+        eachSpace.addEventListener("click", clickSquare);
     }
 });
 
