@@ -87,6 +87,17 @@ if ( ( checkA[2] == checkB[1] ) && ( checkB[1] == checkC[0] ) ) {
 }
 
 
+//wait for the DOM to load before running the code that updates the page
+document.addEventListener("DOMContentLoaded", function() {
+    //find all clickable spaces 
+    let allSpaces = document.querySelectorAll(".gamespace");
+
+    for (x = 0; x < allSpaces.length; x++) {
+        allSpaces[x].addEventListener("click", function() {
+            this.innerHTML = "x";
+        });
+    }
+});
 
 
 
@@ -95,7 +106,7 @@ if ( ( checkA[2] == checkB[1] ) && ( checkB[1] == checkC[0] ) ) {
 // ***** DO NOT EDIT THE CODE BELOW THIS LINE
 // **********************************************
 
-
+/*
 // get a handle on the DOM element to be updated with the outcome
 let gameOutputMsg = document.querySelector("#gameResult span");
 
@@ -116,3 +127,4 @@ if (winState == "x") {
 } else {
   gameOutputMsg.innerHTML = "unknown";
 }
+/*

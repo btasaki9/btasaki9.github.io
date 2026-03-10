@@ -11,26 +11,43 @@
         <link rel="stylesheet" href="styles.css">
 
          <!-- external  javascript  -->
-        <script src="script.js" defer></script>
+        <script src="scripts.js" defer></script>
     </head>
 
 
-    <body>
-       <!-- html elements here -->
-        <div id="gameboard">
-            <!-- Wrap X and O in spans with class names to apply different colors -->
-            <div class="gamespace row1 col1"><span class="x">X</span></div>
-            <div class="gamespace row1 col2"><span class="o">O</span></div>
-            <div class="gamespace row1 col3"><span class="x">X</span></div>
+   <body>
 
-            <div class="gamespace row2 col1"></div>
-            <div class="gamespace row2 col2"><span class="o">O</span></div>
-            <div class="gamespace row2 col3"></div>
+    <div id="currentPlayer">
+        Current Player: <span></span>
+    </div>
+    
+    <div id="gameResult">
+        (no winner yet)
+    </div>
 
-            <div class="gamespace row3 col1"><span class="o">O</span></div>
-            <div class="gamespace row3 col2"></div>
-            <div class="gamespace row3 col3"><span class="x">X</span></div>
+    <div id="gameBoard">
+
+        <div class="row">
+            <div class="gameSpace" id="a1"></div>
+            <div class="gameSpace" id="a2"></div>
+            <div class="gameSpace" id="a3"></div>
         </div>
-    </body>
+
+        <div class="row">
+            <div class="gameSpace" id="b1"></div>
+            <div class="gameSpace" id="b2"></div>
+            <div class="gameSpace" id="b3"></div>
+        </div>
+
+        <div class="row">
+            <div class="gameSpace" id="c1"></div>
+            <div class="gameSpace" id="c2"></div>
+            <div class="gameSpace" id="c3"></div>
+        </div>
+        
+    </div>
+
+</body>
+
     
 </html>
