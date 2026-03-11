@@ -65,6 +65,15 @@ body {
     overflow: hidden; /* hide text overflow */
 }
 
+.gameSpace:hover {
+    background-color: #fdfbe3; /* maintain background color on hover */
+    cursor: pointer; /* change cursor to pointer on hover */
+}
+
+.gameSpace.clicked:hover {
+    background-color: #f7f2ab;
+}
+
 /* Style for X player - blue color */
 .x {
     color: blue;
@@ -98,6 +107,20 @@ body {
 
 #a3, #b3, #c3 {
     left: calc((var(--gameboardsize)/3) * 2);
+}
+
+#gameResult {
+    position: absolute;
+    display: none;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #c5b7eb;
+    color: white;
+    font-size: 5rem;
+    text-align: center;
+    z-index: 1;
 }
 
 
@@ -147,4 +170,5 @@ body {
         /* width/height use --cell-size automatically; no need to re-calc here */
     }
 }
+
 

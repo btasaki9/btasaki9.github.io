@@ -84,6 +84,7 @@ function clickSquare() {
 
     //set space
     this.innerHTML = currentTurn;
+    this.classList.add("clicked");
 
     //subtract one from remaining turns
     remainingTurns--;
@@ -127,6 +128,10 @@ if (winState == "x") {
 } else {
   gameOutputMsg.innerHTML = "unknown";
 }
+
+//reveal game outcome screen
+if (gameOver) {
+  document.querySelector("#gameOutcome").style.display = "block";
 
 
     //flips turn back and forth 
