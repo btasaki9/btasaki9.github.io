@@ -118,11 +118,13 @@ let winState = checkGameboard(rowA, rowB, rowC);
 
 // test the returned value of the function
 if (winState == "X") { 
-  gameOutputMsg.innerHTML = "X wins";
+  // wrap the x in a span for blue styling
+  gameOutputMsg.innerHTML = "<span class='blue'>X</span> wins!";
   gameOver = true;
   
 } else if (winState == "O") {
-  gameOutputMsg.innerHTML = "O wins";
+  // wrap the O in a span for red styling
+  gameOutputMsg.innerHTML = "<span class='red'>O</span> wins!";
   gameOver = true;
 } else if  ((winState == "d") && (remainingTurns == 0)) {
   gameOutputMsg.innerHTML = "draw";
