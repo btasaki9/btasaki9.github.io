@@ -142,7 +142,7 @@ body {
         margin: 2rem 1rem; /* reduce body margin so board fits more easily */
     }
     #gameBoard {
-            margin: 25% auto; /* center the board with some vertical spacing */
+            margin: 15% auto; /* center the board with some vertical spacing */
         border-width: 2rem; /* thinner outer border on smaller screens */
         border-radius: 20px; /* slightly smaller corner radius */
     }
