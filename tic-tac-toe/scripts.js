@@ -154,8 +154,8 @@ document.addEventListener("DOMContentLoaded", function () {
     eachSpace.addEventListener("click", clickSquare);
   }
 
-//updates current player DOM element with first player
-  let currentPlayer= document.querySelector("#currentPlayer span");
+  //updates current player DOM element with first player
+  currentPlayer = document.querySelector("#currentPlayer span");
   currentPlayer.innerHTML = currentTurn;
 });
 
