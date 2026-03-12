@@ -1,98 +1,94 @@
-// declare the board data for a game, using 3 arrays
-// "-" indicates unmarked, "x" indicates an X mark, "o" indicates an O mark
+// declare the board data for a game using 3 arrays
+
 let rowA = ["-", "-", "-"];
 let rowB = ["-", "-", "-"];
 let rowC = ["-", "-", "-"];
 
-//track who's turns 
+// Tracks whose turn it is currently. Starts with "X".
 let currentTurn = "X";
 
-//track number of turns
+// Tracks the number of remaining turns. 
 let remainingTurns = 9;
 
-//track if game is over 
+//  indicates if the game has ended (win or draw).
 let gameOver = false;
 
+// Variable to hold the DOM element displaying the current player.
+let currentPlayer;
 
-//set up blank variable for current DOM player element
-//let currentPlayer;
 
-
-// return Boolean true if all 3 submitted values match, otherwise return false
+// Checks if three spaces have the same value (used for win detection).
+// Returns true if all three values are identical, false otherwise.
 function spaceMatch(spaceA, spaceB, spaceC) {
     return ((spaceA == spaceB) && (spaceA == spaceC));
 }
 
+// Evaluates the game board to determine if there's a winner or if it's a draw.
+
+
 function checkGameboard(checkA, checkB, checkC) {
-  let resultValue = "d"; //assume the game is a draw
+  let resultValue = "d"; // Default to draw, will be updated if a winner is found
 
-  //an if else set of conditional statements, or some loops, or something 
-  //to compare the data
+  // Check all possible winning combinations: columns, rows, and diagonals
 
-
-
-  // check column 0
+  // Check each column for three matching marks
   if (spaceMatch(checkA[0], checkB[0], checkC[0])) {
-    if (checkA[0] != "-") resultValue = checkA[0]; // set outcome to winner if not "-"
+    if (checkA[0] != "-") resultValue = checkA[0]; // Winner found if not empty
   }
 
-  // check column 1
   if (spaceMatch(checkA[1], checkB[1], checkC[1])) {
-    if (checkA[1] != "-") resultValue = checkA[1]; // set outcome to winner if not "-"
+    if (checkA[1] != "-") resultValue = checkA[1];
   }
 
-  // check column 2
   if (spaceMatch(checkA[2], checkB[2], checkC[2])) {
-    if (checkA[2] != "-") resultValue = checkA[2]; // set outcome to winner if not "-"
+    if (checkA[2] != "-") resultValue = checkA[2];
   }
 
-  // check row A
+  // Check each row for three matching marks
   if (spaceMatch(checkA[0], checkA[1], checkA[2])) {
-    if (checkA[0] != "-") resultValue = checkA[0]; // set outcome to winner if not "-"
+    if (checkA[0] != "-") resultValue = checkA[0];
   }
 
-  // check row B
   if (spaceMatch(checkB[0], checkB[1], checkB[2])) {
-    if (checkB[0] != "-") resultValue = checkB[0]; // set outcome to winner if not "-"
+    if (checkB[0] != "-") resultValue = checkB[0];
   }
 
-  // check row C
   if (spaceMatch(checkC[0], checkC[1], checkC[2])) {
-    if (checkC[0] != "-") resultValue = checkC[0]; // set outcome to winner if not "-"
+    if (checkC[0] != "-") resultValue = checkC[0];
   }
 
-  // check diagonal from top left
+  // Check diagonals for three matching marks
   if (spaceMatch(checkA[0], checkB[1], checkC[2])) {
-    if (checkA[0] != "-") resultValue = checkA[0]; // set outcome to winner if not "-"
+    if (checkA[0] != "-") resultValue = checkA[0];
   }
 
-  // check diagonal from bottom left
   if (spaceMatch(checkC[0], checkB[1], checkA[2])) {
-    if (checkC[0] != "-") resultValue = checkC[0]; // set outcome to winner if not "-"
+    if (checkC[0] != "-") resultValue = checkC[0];
   }
 
-  return resultValue; // return the final outcome
+  return resultValue; // Return the game outcome
 }
 
 
 
 
-//function for clicks 
+// Event handler for when a game square is clicked.
+// Handles placing marks, updating the board, checking for wins, and switching turns.
 function clickSquare() {
-  //proceeds if space is as empty
+  // Only proceed if the space is empty and the game isn't over
   if ((this.innerHTML == "") && !gameOver) {
 
-    //set space
+    // Place the current player's mark in the clicked square
     this.innerHTML = currentTurn;
 
-    //add class for styling
+    // Add CSS class for styling
     this.classList.add(currentTurn.toLowerCase());
 
-    //subtract one from remaining turns
+    // Decrease remaining turns counter
     remainingTurns--;
     console.log("Remaining turns: " + remainingTurns);
 
-    //update the array of rows with the player value 
+    // Update the corresponding array position based on the square's ID
     if (this.id=="a1") rowA[0] = currentTurn;
     if (this.id=="a2") rowA[1] = currentTurn;
     if (this.id=="a3") rowA[2] = currentTurn;
@@ -103,48 +99,45 @@ function clickSquare() {
     if (this.id=="c2") rowC[1] = currentTurn;
     if (this.id=="c3") rowC[2] = currentTurn;
 
-    //output arays to console
+    // Log the current board state to console for debugging
     console.log("Rows");
     console.log(rowA);
     console.log(rowB);
     console.log(rowC);
 
-    // get a handle on the DOM element to be updated with the outcome
-let gameOutputMsg = document.querySelector("#gameResult");
+    // Get reference to the game result display element
+    let gameOutputMsg = document.querySelector("#gameResult");
 
+    // Check for a winner or draw by evaluating the board
+    let winState = checkGameboard(rowA, rowB, rowC);
 
-// call your function checkGameboard() with the 3 rows
-let winState = checkGameboard(rowA, rowB, rowC);
+    // Update the game result message based on the outcome
+    if (winState == "X") { 
+      // Style X in blue
+      gameOutputMsg.innerHTML = "<span class='blue'>X</span> wins!";
+      gameOver = true;
+      
+    } else if (winState == "O") {
+      // Style O in red
+      gameOutputMsg.innerHTML = "<span class='red'>O</span> wins!";
+      gameOver = true;
+    } else if  ((winState == "d") && (remainingTurns == 0)) {
+      gameOutputMsg.innerHTML = "draw";
+      gameOver = true;
+    } else {
+      gameOutputMsg.innerHTML = "unknown";
+    }
 
-// test the returned value of the function
-if (winState == "X") { 
-  // wrap the x in a span for blue styling
-  gameOutputMsg.innerHTML = "<span class='blue'>X</span> wins!";
-  gameOver = true;
-  
-} else if (winState == "O") {
-  // wrap the O in a span for red styling
-  gameOutputMsg.innerHTML = "<span class='red'>O</span> wins!";
-  gameOver = true;
-} else if  ((winState == "d") && (remainingTurns == 0)) {
-  gameOutputMsg.innerHTML = "draw";
-  gameOver = true;
-} else {
-  gameOutputMsg.innerHTML = "unknown";
-}
+    // Show the game result if the game has ended
+    if (gameOver) {
+        document.querySelector("#gameResult").style.display = "block";
+    }
 
-// reveal game outcome if game is over
-        if (gameOver) {
-            document.querySelector("#gameResult").style.display = "block";
-        }
-
-
-    //flips turn back and forth 
+    // Switch to the other player's turn
     if (currentTurn == "X") currentTurn = "O";
     else currentTurn = "X";
 
-
-    //update next player DOM element
+    // Update the current player display
     currentPlayer.innerHTML = currentTurn;
   }
 
