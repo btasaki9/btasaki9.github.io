@@ -88,7 +88,7 @@ function clickSquare() {
     remainingTurns--;
     console.log("Remaining turns: " + remainingTurns);
 
-    // Update the corresponding array position based on the square's ID
+    // Updates the array's position based on the square's ID
     if (this.id=="a1") rowA[0] = currentTurn;
     if (this.id=="a2") rowA[1] = currentTurn;
     if (this.id=="a3") rowA[2] = currentTurn;
