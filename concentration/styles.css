@@ -37,6 +37,7 @@ body {
   height: 27vw;
   perspective: 500px;/* special CSS property relevant to 3D flips */
   margin-bottom: 2rem; 
+  transition: opacity 1s;
 
 }
 
@@ -76,6 +77,11 @@ body {
 .cardBottom {
   background-color: #eee;
   transform: rotateY(180deg); /* pre-flip so it appears on parent's flip */
+}
+
+.matched {
+  opacity: 0;
+  transition-delay: 2s;
 }
 
 /*********************** specific card styling */
