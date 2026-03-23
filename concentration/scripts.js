@@ -4,7 +4,34 @@
 
 //new function to flip card when clicked 
 function flipCard() {
-    this.classlist.add("clicked");
+
+    //get all the clicked cards 
+    let allClickedCards = document.quearySelectorAll(".clicked");
+
+    //only proceeds if there are less than 2 clicked 
+    if (allClickedCards.length < 2) {
+        //add clicked clas to clicked card 
+    this.classList.add("clicked");
+
+    }
+
+    //get a fresh list of clicked cards
+    let allClickedCards = document.quearySelectorAll(".clicked");
+
+    //if it's a pair compare them 
+    if (allClickedCards.length == 2) {
+
+        let card1 = allClickedCards[0].classList.toString();
+        let card2 = allClickedCards[1].classList.toString();
+
+        if (card1 == card2) {
+            console.log("It's a match!");
+        }else {
+            console.log("Not a match!");
+        }
+
+    }
+    
 }
 
 
