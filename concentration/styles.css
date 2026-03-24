@@ -47,12 +47,12 @@ body {
   font-size: 6rem;
   color: white;
   text-shadow: 3px 3px 4px #cc9933;
-  margin: 2rem 10%;
+  margin: 3rem 10%;
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 
 #gameScore {
-  background: rgba(0, 0, 0, 0.35);
   z-index: 999;
   position: sticky;
   top: 0;
