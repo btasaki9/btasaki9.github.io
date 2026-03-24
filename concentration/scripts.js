@@ -19,7 +19,8 @@ function clearClicks() {
     let allCards= document.querySelectorAll(".card");
     let matchedCards = document.querySelectorAll(".matched");
     if (allCards.length == matchedCards.length) {
-        //player has matched all cards 
+        //player has matched all cards
+        console.log ("all cards matched, player has won");
         document.querySelector("#winning").innerHTML = "Congratulation you won!";
     }
 }
@@ -79,12 +80,14 @@ document.addEventListener("DOMContentLoaded", function (e) {
     let allCards = document.querySelectorAll(".card");
     let gameBoard = document.querySelector("#gameboard");
 
-    //randomize cards by looping through the cards 
+    //randomize cards by looping through the cards and adds click listiners 
     for (let x = 0; x < allCards.length; x++) {
 
+        //randomize card by reinserting them in random spots
         let randNum = Math.floor(Math.random() * allCards.length);
         gameBoard.insertBefore(allCards[x], gameBoard.children[randNum]);
 
+        //calls flipcard when clicked 
         allCards[x].addEventListener("click", flipCard);
 
     }
