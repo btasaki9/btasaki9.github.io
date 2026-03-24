@@ -30,7 +30,7 @@ body {
   justify-content: center;
   gap: 20px;
   min-height: 100vh;
-  padding: 10px 80px 50px 80px;
+  padding: 5px 80px 50px 80px;
 
 }
 
@@ -38,18 +38,24 @@ body {
   font-family: Hylia Serif, serif;
   color: white;
   font-size: 7rem;
-  margin-left: 5rem;
-  margin-bottom: .1rem;
+  margin: 0 0 0 5rem;
   text-shadow: 3px 3px 4px #cc9933;
 }
 
 #winning {
   font-family: Hylia Serif, serif;
-  font-size: 10rem;
+  font-size: 6rem;
   color: white;
   text-shadow: 3px 3px 4px #cc9933;
-  
+  margin: 2rem 10%;
+}
 
+
+#gameScore {
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 999;
+  position: sticky;
+  top: 0;
 }
 
 

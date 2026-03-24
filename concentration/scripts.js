@@ -21,7 +21,7 @@ function clearClicks() {
     if (allCards.length == matchedCards.length) {
         //player has matched all cards
         console.log ("all cards matched, player has won");
-        document.querySelector("#winning").innerHTML = "Congratulation you won!";
+        document.querySelector("#winning").innerHTML = "Congratulations you won!";
     }
 }
 
