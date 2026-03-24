@@ -8,6 +8,7 @@ To achieve the flipping effect on a mouse-over (hover), we need to position and 
 
 :root {
   --cardSize: 40vw; /* variable for card dimensions */
+  --timeDelay: 1s;
 }
 
 body {
@@ -81,7 +82,7 @@ body {
 
 .matched {
   opacity: 0;
-  transition-delay: 2s;
+  transition-delay: var(--timeDelay);
 }
 
 /*********************** specific card styling */

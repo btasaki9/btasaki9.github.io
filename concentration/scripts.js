@@ -2,6 +2,7 @@
 
 //track number of turns
 let playerClicks = 0;
+let timeDelay = 1000;// in milliseconds, 2000ms = 2s, this is the time delay for flipping cards back over if they don't match and for removing matched cards from the board
 
 //clear clicked classes
 function clearClicks() {
@@ -12,7 +13,15 @@ function clearClicks() {
 
     //increase player turn count by 1 
     playerClicks++;
-    document.querySelector("#turnCount span").innerHTML = playerClicks;   
+    document.querySelector("#turnCount span").innerHTML = playerClicks; 
+    
+    //check for winning 
+    let allCards= document.querySelectorAll(".card");
+    let matchedCards = document.querySelectorAll(".matched");
+    if (allCards.length == matchedCards.length) {
+        //player has matched all cards 
+        document.querySelector("#winning").innerHTML = "Congratulation you won!";
+    }
 }
 
 //new function to flip card when clicked 
@@ -46,11 +55,11 @@ function flipCard() {
                 console.log("It's a match!");
                 allClickedCards[0].classList.add("matched");
                 allClickedCards[1].classList.add("matched");
-                window.setTimeout(clearClicks, 2000);
+                window.setTimeout(clearClicks, timeDelay);
             }
             else {
                 console.log("Not a match!");
-                window.setTimeout(clearClicks, 2000);
+                window.setTimeout(clearClicks, timeDelay);
             }
 
         }
