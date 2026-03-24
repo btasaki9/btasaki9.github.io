@@ -3,6 +3,11 @@
 To achieve the flipping effect on a mouse-over (hover), we need to position and style the nest of DOM objects with a handful of special 3D-rotation CSS properties, a transform rotation applied on :hover, and transitions to make the rotations apply smoothly.
 */
 
+@font-face {
+  font-family: 'Hylia Serif';
+  src: url('fonts/HyliaSerifBeta-Regular.otf') format('opentype');
+}
+
 * { box-sizing: border-box; }
 
 
@@ -25,7 +30,25 @@ body {
   justify-content: center;
   gap: 20px;
   min-height: 100vh;
-  padding: 50px 80px 50px 80px;
+  padding: 10px 80px 50px 80px;
+
+}
+
+#turnCount {
+  font-family: Hylia Serif, serif;
+  color: white;
+  font-size: 7rem;
+  margin-left: 5rem;
+  margin-bottom: .1rem;
+  text-shadow: 3px 3px 4px #cc9933;
+}
+
+#winning {
+  font-family: Hylia Serif, serif;
+  font-size: 10rem;
+  color: white;
+  text-shadow: 3px 3px 4px #cc9933;
+  
 
 }
 
