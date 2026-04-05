@@ -22,6 +22,14 @@ async function getData(url, options) {
     }
 }
 
+//update weather display in the DOM based on passed object 
+function updateWeather(weatherObject) {
+   console.log(weatherObject);
+   document.querySelector("#currenttemp span").innerHTML = weatherObject.current.temp_f;
+}
+
+
+
 //wait for the DOM to load before running the code
 document.addEventListener("DOMContentLoaded", function () {
     scrollingBox = document.querySelector("#futureinfo"); /* get a handle on the parent container by tag or ID */
@@ -55,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
     //get sample data 
     getData(sampleURL, sampleOptions).then(function (result) {
         // code to operate on “result” JSON object
-        console.log(result.forecast.forecastday[0].day.maxtemp_f);
+        updateWeather(result);
     });
 
 
