@@ -26,6 +26,14 @@ async function getData(url, options) {
 function updateWeather(weatherObject) {
    console.log(weatherObject);
    document.querySelector("#currenttemp span").innerHTML = weatherObject.current.temp_f;
+   document.querySelector("#currentstatus").innerHTML = weatherObject.current.condition.text;
+   document.querySelector("#currenthumidity span").innerHTML = weatherObject.current.humidity;
+
+   let windspeed = weatherObject.current.wind_mph;
+   let winddirection = weatherObject.current.wind_dir;
+   document.querySelector("#currentwind").innerHTML = windspeed + "mph " + winddirection;
+
+   let futuredays = document.querySelectorAll(".futureday");
 }
 
 
