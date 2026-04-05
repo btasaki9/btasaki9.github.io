@@ -35,10 +35,12 @@ function updateWeather(weatherObject) {
 
     let futuredays = document.querySelectorAll(".futureday");
     for (i = 0; i < futuredays.length; i++) {
-        futuredays[i].querySelector(".futuretemp").innerHTML = weatherObject.forecast.forecastday[i].day.maxtemp_f;
+    futuredays[i].querySelector(".futuretemp").innerHTML = weatherObject.forecast.forecastday[i].day.maxtemp_f;
     
-     windspeed = weatherObject.forecast.forecastday[i].day.maxwind_mph;
+    windspeed = weatherObject.forecast.forecastday[i].day.maxwind_mph;
     futuredays[i].querySelector(".futurewind").innerHTML = windspeed + "mph ";
+
+    futuredays[i].querySelector(".futurestatus").innerHTML = weatherObject.forecast.forecastday[i].day.condition.text;
 
     }
 
