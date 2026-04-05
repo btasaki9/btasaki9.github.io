@@ -1,0 +1,289 @@
+/*styles for weather app*/
+
+/***************general layout**********/
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --predictionboxwidth: 70vw;
+    --predictionboxheight: 20vh;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+   font-family: "Roboto", sans-serif;
+}
+
+main {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-color: lightgray;
+    color: white;
+    text-shadow: 1px 1px 2px black;
+   
+
+    display: grid;
+    grid-template-columns: 50vw 50vw;
+    grid-template-rows: 50vh 30vh var(--predictionboxheight);
+    grid-template-areas:
+        'current-info   current-info'
+        'currenthum     currentwind'
+        'future                   future';
+}
+
+/*****************current info********/
+#current-info {
+    position: relative;
+    grid-area: current-info;
+    display: flex;
+    align-items: center;      /* centers vertically */
+    justify-content: center;   /* centers horizontally */
+    background-color: salmon;
+    
+    background-image: url(images/360_F_302037028_WgdzBqp7MCTF0iITajUUVryCKJsyjOE6.jpg);
+
+}
+
+#currenttemp {
+    font-size: 22vw;
+    color: #a8e6f1;
+}
+
+#currentstatus {
+    position: absolute;
+    bottom: 3rem;
+    
+    font-size: 10vw;
+}
+
+#location {
+    position: absolute;
+    top: 3rem;
+    font-size: 9vw;
+    
+    
+}
+
+
+/**************current humidity********/
+
+#currenthumidity {
+    position: relative;
+    grid-area: currenthum;
+    color: rgb(207, 220, 243);
+   
+    display: flex;
+    align-items: center;      /* centers vertically */
+    justify-content: center;
+    font-size: 8vw;
+    background-image: url(images/166.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+#currenthumidity #humidity {
+    text-align: center;
+    font-size: 7vw;
+}
+
+
+#currenthumidity b {
+    font-size: 15vw;
+}
+
+#wind {
+    text-align: center;
+    font-size: 7vw;
+}
+
+
+
+/***************current wind********/
+#currentwind {
+    position: relative;
+    grid-area: currentwind;
+    color: rgb(206, 198, 105);;
+    display: flex;
+    align-items: center;      /* centers vertically */
+    justify-content: center;
+    font-size: 5vw;
+    background-image: url(images/dandelion--taraxacum--in-the-wind-200194596-001-5c8d4453c9e77c00014a9d5d.jpg);
+    background-size: cover;
+    background-position: center;
+
+}
+
+
+
+/***************future prediction********/
+#futureinfo {
+    position: relative;
+    grid-area: future;
+    background-color: rgb(207, 231, 240);
+    overflow: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    font-size: 7vw;
+}
+
+#futureinfo::-webkit-scrollbar {
+    display: none;
+}
+
+.futureday {
+    position: absolute;
+    width: var(--predictionboxwidth);
+    height: var(--predictionboxheight);
+    border: 2px solid rgb(255, 255, 255);
+    text-align: center;
+    padding-top: 0.7rem;
+
+
+    
+}
+
+.futureday:nth-child(2) {
+    left: var(--predictionboxwidth);
+}
+
+.futureday:nth-child(3) {
+    left: calc(var(--predictionboxwidth) * 2);
+    border-right: none;
+
+}
+
+.futuretemp {
+    top: 2rem;
+    color:#a8e6f1
+}
+
+/**************desktop********/
+
+@media screen and (orientation: landscape) {
+    :root{
+        --predictionboxwidth:30vw;
+        --predictionboxheight: calc( 100vh/3 );
+    }
+    main {
+        grid-template-columns: 60vw 40vw;
+        grid-template-rows: var(--predictionboxheight) var(--predictionboxheight) var(--predictionboxheight);
+        grid-template-areas:
+            'current-info    currenthum'
+            'current-info    currentwind'
+            'current-info    future';
+    }
+
+    #current-info {
+        border-bottom: none;
+        border-right: 15px solid rgb(255, 255, 255);
+    }
+
+
+
+    .futureday {
+        font-size: 3.5vw;
+    }
+
+    #currenthumidity b {
+    font-size: 6vw;
+}
+
+    #currenthumidity #humidity {
+    text-align: center;
+    font-size: 3vw;
+}
+
+    #wind {
+        font-size: 4vw;
+    }
+   
+}
+
+@media only screen and (max-width: 1030px) and (min-width: 413px) {
+    
+    #current-info {
+        background-size: cover;
+    }
+
+    #currenttemp {
+    font-size: 20vw;
+    }
+
+    #location {
+    font-size: 6vw;
+    }
+
+    #currentstatus {
+    bottom: 4rem;
+    font-size: 8vw;
+    }
+
+    #currenthumidity {
+    font-size: 8vw;
+    }
+
+    #currentwind {
+    font-size: 5vw;
+    }
+
+    /* humidity labels removed */
+
+
+    .futureday {
+    font-size: 6vw;
+
+    }
+
+}
+
+@media only screen and  (min-width: 1031px) {
+  
+      #current-info {
+        background-size: cover;
+    }
+
+    #currenttemp {
+    font-size: 12vw;
+    }
+
+    #location {
+    font-size: 4vw;
+    }
+
+    #currentstatus {
+    bottom: 6rem;
+    font-size: 5vw;
+    }
+
+    #currenthumidity {
+    font-size: 8vw;
+    
+    }
+
+    #currentwind {
+    font-size: 5vw;
+
+    }
+
+    /* humidity labels removed */
+
+   
+
+    .futureday {
+    font-size: 3.5vw;
+
+    }
+}
+
+
+
+
+
+   
