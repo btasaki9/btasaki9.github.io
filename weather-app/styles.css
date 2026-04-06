@@ -164,6 +164,21 @@ main {
     color:#a8e6f1
 }
 
+/**************modal window stuff********/
+
+/* blur and dim the background with a cover*/
+#modalCover {
+   position: fixed;
+   display: none;
+   top: 0;
+   left: 0; 
+   width: 100vw;
+   height: 100vh;
+   background-color: rgba(255,255,255,0.5);
+   backdrop-filter: blur(5px);
+   z-index: 1000; 
+}
+
 /**************desktop********/
 
 @media screen and (orientation: landscape) {
