@@ -1,5 +1,17 @@
 /* javascript to enabled drag-scrolling */
 
+//weather API global variables
+const url = 'https://weatherapi-com.p.rapidapi.com/forecast.json?q=London&days=3';
+const options = {
+	method: 'GET',
+	headers: {
+		'x-rapidapi-key': '3933a62283msh6859f42dfe04d17p1da7cajsn41b441386073',
+		'x-rapidapi-host': 'weatherapi-com.p.rapidapi.com',
+		'Content-Type': 'application/json'
+	}
+};
+
+
 //preparing variables
 let scrollingBox;
 let offsetLeftStart;
