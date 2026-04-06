@@ -49,14 +49,12 @@ function updateWeather(weatherObject) {
         windspeed = weatherObject.forecast.forecastday[i].day.maxwind_mph;
         futuredays[i].querySelector(".futurewind").innerHTML = windspeed + "mph ";
 
-        //update future status
+        //update future condition status
         futuredays[i].querySelector(".futurestatus").innerHTML = weatherObject.forecast.forecastday[i].day.condition.text;
 
     }
 
 }
-
-
 
 //wait for the DOM to load before running the code
 document.addEventListener("DOMContentLoaded", function () {
@@ -84,9 +82,18 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
+
+
+    let ipLookupURL = "https://api.ipify.org/?format=json";
+    let ipLookupOptions = {};
+
+    getData(ipLookupURL, ipLookupOptions).then(function(result) {
+    console.log(result.ip);
+   });
+
+
     let sampleURL = "https://tordevries.github.io/477/examples/ajax-api-test/current-forecast.js";
     let sampleOptions = {};
-
 
     //get sample data 
     getData(sampleURL, sampleOptions).then(function (result) {
