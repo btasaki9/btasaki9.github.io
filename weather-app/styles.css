@@ -91,7 +91,9 @@ main {
     background-size: cover;
     background-position: center;
     border-radius:15px;
-    margin: 1rem; 
+    margin: .5rem; 
+    margin-top: 1rem;
+    margin-right: 1rem;
 }
 
 #currenthumidity #humidity {
@@ -123,6 +125,10 @@ main {
     background-image: url(images/dandelion--taraxacum--in-the-wind-200194596-001-5c8d4453c9e77c00014a9d5d.jpg);
     background-size: cover;
     background-position: center;
+    margin: .5rem; 
+    margin-top: 1rem;
+    margin-right: 1rem;
+     border-radius:15px;
 
 }
 
@@ -138,6 +144,11 @@ main {
     scrollbar-width: none;
     -ms-overflow-style: none;
     font-size: 7vw;
+    margin: .5rem; 
+    margin-top: 1rem;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+     border-radius:15px;
 }
 
 #futureinfo::-webkit-scrollbar {
@@ -225,7 +236,7 @@ main {
 
     #current-info {
         border-bottom: none;
-        border-right: 15px solid rgb(255, 255, 255);
+        
     }
 
 
