@@ -1,7 +1,7 @@
 /* javascript to enabled drag-scrolling */
 
 //weather API global variables
-const weatherurl = 'https://weatherapi-com.p.rapidapi.com/forecast.json?days=3&q=London';
+const weatherurl = 'https://weatherapi-com.p.rapidapi.com/forecast.json?days=3&q=';
 const weatheroptions = {
 	method: 'GET',
 	headers: {
@@ -101,15 +101,18 @@ document.addEventListener("DOMContentLoaded", function () {
    
     //use ajax to fetch IP in JSON format
     getData(ipLookupURL, ipLookupOptions).then(function(result) {
-    
+       
+        //adding the IP number to the weather URL for lookup
+        let weatherLookupURL = weatherUrl + result.ip;
+        console.log(weatherLookupURL);
+
        //use the resulting IP number to look up weather 
-       getData(weatherUrl, weatherOptions).then(function(weatherResult){
+       getData(weatherLookupURL, weatherOptions).then(function(weatherResult){
             console.log(weatherResult);
+            updateWeather(weatherResult);
        });
        
    });
 
-
-   
 
 });
