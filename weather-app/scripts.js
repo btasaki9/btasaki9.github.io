@@ -115,4 +115,10 @@ document.addEventListener("DOMContentLoaded", function () {
    });
 
 
+   //make the location button show the modal popups
+   document.querySelector("#findlocation").addEventListener("click", function(){
+    document.body.classList.toggle("showModal");
+   });
+
+
 });

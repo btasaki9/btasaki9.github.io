@@ -218,6 +218,11 @@ main {
     z-index: 999;
 }
 
+body.showModal #modalCover,
+body.showModal #modalForm {
+    display: block;
+}
+
 /**************desktop********/
 
 @media screen and (orientation: landscape) {
