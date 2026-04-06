@@ -179,6 +179,27 @@ main {
    z-index: 1000; 
 }
 
+#modalForm{
+    position: fixed;
+    display: none;
+    width: 80vw;
+    height: 60vh;
+    left: 10vw;
+    top: 20vh;
+    padding: 1em;
+    background-color: white;
+    border: 1px solid gray;
+    color: black; 
+    z-index: 1001;
+}
+
+#findLocation{
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 999;
+}
+
 /**************desktop********/
 
 @media screen and (orientation: landscape) {
