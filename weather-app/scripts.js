@@ -1,7 +1,7 @@
-/* javascript to enabled drag-scrolling */
+/* javascript to enable drag-scrolling */
 
 //weather API global variables
-const weatherurl = 'https://weatherapi-com.p.rapidapi.com/forecast.json?days=3&q=';
+const weatherUrl = 'https://weatherapi-com.p.rapidapi.com/forecast.json?days=3&q=';
 const weatheroptions = {
 	method: 'GET',
 	headers: {
@@ -19,7 +19,7 @@ let scrollLeftStart;
 let isMoving;
 
 
-//function to get remove JSON data
+//function to get remote JSON data
 async function getData(url, options) {
     try {
         const response = await fetch(url, options);
@@ -116,7 +116,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
    //make the location button show the modal popups
-   document.querySelector("#findlocation").addEventListener("click", function(){
+   document.querySelector("#findLocation").addEventListener("click", function(){
     document.body.classList.toggle("showModal");
    });
 
