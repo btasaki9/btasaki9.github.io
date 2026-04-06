@@ -1,8 +1,8 @@
 /* javascript to enabled drag-scrolling */
 
 //weather API global variables
-const url = 'https://weatherapi-com.p.rapidapi.com/forecast.json?q=London&days=3';
-const options = {
+const weatherurl = 'https://weatherapi-com.p.rapidapi.com/forecast.json?days=3&q=London';
+const weatheroptions = {
 	method: 'GET',
 	headers: {
 		'x-rapidapi-key': '3933a62283msh6859f42dfe04d17p1da7cajsn41b441386073',
@@ -95,26 +95,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-
+    //ip lookup data
     let ipLookupURL = "https://api.ipify.org/?format=json";
     let ipLookupOptions = {};
-
+   
+    //use ajax to fetch IP in JSON format
     getData(ipLookupURL, ipLookupOptions).then(function(result) {
-    console.log(result.ip);
+    
+       //use the resulting IP number to look up weather 
+       getData(weatherUrl, weatherOptions).then(function(weatherResult){
+            console.log(weatherResult);
+       });
+       
    });
 
 
-    let sampleURL = "https://tordevries.github.io/477/examples/ajax-api-test/current-forecast.js";
-    let sampleOptions = {};
-
-    //get sample data 
-    getData(sampleURL, sampleOptions).then(function (result) {
-        // code to operate on “result” JSON object
-        updateWeather(result);
-    });
-
-
-
-
+   
 
 });
