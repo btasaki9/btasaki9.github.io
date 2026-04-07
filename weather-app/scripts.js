@@ -119,6 +119,27 @@ document.addEventListener("DOMContentLoaded", function () {
    document.querySelector("#findLocation").addEventListener("click", function(){
     document.body.classList.toggle("showModal");
    });
+ 
+   document.querySelector("locationForm").addEventListener("submit", function(event){
+     
+    //stop from submitting to server
+        event.preventDefault();
+
+      document.body.classList.toggle("showModal");
+      let newLocation = document.quearySelector("#locationBox").value;
 
 
+    //adding the passed value to the weather URL for lookup
+        let weatherLookupURL = weatherUrl + newLocation;
+        console.log(weatherLookupURL);
+
+       //use the resulting IP number to look up weather 
+       getData(weatherLookupURL, weatherOptions).then(function(weatherResult){
+            console.log(weatherResult);
+            updateWeather(weatherResult);
+       });
+
+   });
+
+   
 });
