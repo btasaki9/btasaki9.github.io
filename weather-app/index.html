@@ -2,73 +2,62 @@
 <html>
 
 <head>
-   <!-- meta tags and title -->
 
+    <!-- meta tags and title -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App 2.0</title>
 
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Weather App 2.0</title>
+    <!-- external and internal CSS -->
+    <link rel="stylesheet" href="styles.css" media="all">
 
-
-   <!-- external and internal CSS  -->
-   <link rel="stylesheet" href="styles.css">
-
-
-   <!-- external and internal JavaScript -->
-   <script src="scripts.js" defer></script>
+    <!-- external and internal JavaScript -->
+    <script src="scripts.js" defer></script>
 
 </head>
 
-
-
-
 <body>
-   <!-- html elements here -->
 
-   <div id="modalCover"></div>
-   <div id="modalForm">
-      <form id="locationForm">
-         <input type="text" id="locationBox">
-         <button type="submit">Get Weather</button>
-      </form>
-   </div>
+    <div id="modalCover"></div>
+    <div id="modalForm">
+        <form id="locationForm">
+            <input type="text" id="locationBox">
+            <button type="Submit">Get Weather</button>
+        </form>
+    </div>
 
-   <button id="findLocation">Newlocation</button>
+    <button id="findLocation">New Location</button>
 
-   <main>
-      <div id="current-info">
-         <div id="location">Herndon VA</div>
-         <div id="currenttemp"><b><span></span>°F</b></div>
-         <div id="currentstatus"></div>
-      </div>
+    <main>
+        <div id="currentInfo">
+            <div id="currentTemp"><span></span>°F</div>
+            <div id="currentStatus"></div>
+        </div>
 
-      <div id="currenthumidity">
-         <div id="humidity">Humidity<span>62</span>%</div>
+        <div id="currentHumidity"><span></span>%</div>
+
+        <div id="currentWind"></div>
+
+        <div id="futureInfo">
+            <div class="futureDay">
+                <div class="futureTemp"><span></span>°F</div>
+                <div class="futureWind"></div>
+                <div class="futureStatus"></div>
+            </div>
+            <div class="futureDay">
+                <div class="futureTemp"><span></span>°F</div>
+                <div class="futureWind"></div>
+                <div class="futureStatus"></div>
+            </div>
+            <div class="futureDay">
+                <div class="futureTemp"><span></span>°F</div>
+                <div class="futureWind"></div>
+                <div class="futureStatus"></div>
+            </div>
+        </div>
+    </main>
 
 
-
-      </div>
-
-      <div id="currentwind">
-         <div id="wind">Wind<br><br><b>6 km/h NNW</b></div>
-      </div>
-
-      <div id="futureinfo">
-         <div class="futureday">
-            <div class="futuretemp"><b><span></span></b></div>
-            <div class="futurewind"></div>
-            <div class="futurestatus">cloudy</div>
-         </div>
-         <div class="futureday">
-            <div class="futuretemp"><b><span></span></b></div>
-            <div class="futurewind"></div>
-            <div class="futurestatus">Partially Sunny</div>
-         </div>
-         <div class="futureday">
-            <div class="futuretemp"><b><span></span></b></div>
-            <div class="futurewind"></div>
-            <div class="futurestatus">Partially Sunny</div>
-         </div>
-      </div>
-   </main>
 </body>
+
+</html>

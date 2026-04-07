@@ -39,7 +39,7 @@ main {
 }
 
 /*****************current info********/
-#current-info {
+#currentInfo {
     position: relative;
     grid-area: current-info;
     display: flex;
@@ -55,13 +55,13 @@ main {
 
 }
 
-#currenttemp {
+#currentTemp {
     font-size: 22vw;
     color: #a8e6f1;
 
 }
 
-#currentstatus {
+#currentStatus {
     position: absolute;
     bottom: 3rem;
     
@@ -79,7 +79,7 @@ main {
 
 /**************current humidity********/
 
-#currenthumidity {
+#currentHumidity {
     position: relative;
     grid-area: currenthum;
     color: rgb(207, 220, 243);
@@ -96,13 +96,13 @@ main {
     margin-right: 1rem;
 }
 
-#currenthumidity #humidity {
+#currentHumidity #humidity {
     text-align: center;
     font-size: 7vw;
 }
 
 
-#currenthumidity b {
+#currentHumidity b {
     font-size: 15vw;
 }
 
@@ -114,7 +114,7 @@ main {
 
 
 /***************current wind********/
-#currentwind {
+#currentWind {
     position: relative;
     grid-area: currentwind;
     color: rgb(206, 198, 105);;
@@ -135,7 +135,7 @@ main {
 
 
 /***************future prediction********/
-#futureinfo {
+#futureInfo {
     position: relative;
     grid-area: future;
     background-color: rgb(207, 231, 240);
@@ -151,11 +151,11 @@ main {
      border-radius:15px;
 }
 
-#futureinfo::-webkit-scrollbar {
+#futureInfo::-webkit-scrollbar {
     display: none;
 }
 
-.futureday {
+.futureDay {
     position: absolute;
     width: var(--predictionboxwidth);
     height: var(--predictionboxheight);
@@ -167,17 +167,17 @@ main {
     
 }
 
-.futureday:nth-child(2) {
+.futureDay:nth-child(2) {
     left: var(--predictionboxwidth);
 }
 
-.futureday:nth-child(3) {
+.futureDay:nth-child(3) {
     left: calc(var(--predictionboxwidth) * 2);
     border-right: none;
 
 }
 
-.futuretemp {
+.futureTemp {
     top: 2rem;
     color:#a8e6f1
 }
@@ -239,22 +239,22 @@ body.showModal #modalForm {
             'current-info    future';
     }
 
-    #current-info {
+    #currentInfo {
         border-bottom: none;
         
     }
 
 
 
-    .futureday {
+    .futureDay {
         font-size: 3.5vw;
     }
 
-    #currenthumidity b {
+    #currentHumidity b {
     font-size: 6vw;
 }
 
-    #currenthumidity #humidity {
+    #currentHumidity #humidity {
     text-align: center;
     font-size: 3vw;
 }
@@ -267,11 +267,11 @@ body.showModal #modalForm {
 
 @media only screen and (max-width: 1030px) and (min-width: 413px) {
     
-    #current-info {
+    #currentInfo {
         background-size: cover;
     }
 
-    #currenttemp {
+    #currentTemp {
     font-size: 20vw;
     }
 
@@ -279,23 +279,23 @@ body.showModal #modalForm {
     font-size: 6vw;
     }
 
-    #currentstatus {
+    #currentStatus {
     bottom: 4rem;
     font-size: 8vw;
     }
 
-    #currenthumidity {
+    #currentHumidity {
     font-size: 8vw;
     }
 
-    #currentwind {
+    #currentWind {
     font-size: 5vw;
     }
 
     /* humidity labels removed */
 
 
-    .futureday {
+    .futureDay {
     font-size: 6vw;
 
     }
@@ -304,11 +304,11 @@ body.showModal #modalForm {
 
 @media only screen and  (min-width: 1031px) {
   
-      #current-info {
+      #currentInfo {
         background-size: cover;
     }
 
-    #currenttemp {
+    #currentTemp {
     font-size: 12vw;
     }
 
@@ -316,17 +316,17 @@ body.showModal #modalForm {
     font-size: 4vw;
     }
 
-    #currentstatus {
+    #currentStatus {
     bottom: 6rem;
     font-size: 5vw;
     }
 
-    #currenthumidity {
+    #currentHumidity {
     font-size: 8vw;
     
     }
 
-    #currentwind {
+    #currentWind {
     font-size: 5vw;
 
     }
@@ -335,7 +335,7 @@ body.showModal #modalForm {
 
    
 
-    .futureday {
+    .futureDay {
     font-size: 3.5vw;
 
     }
