@@ -40,6 +40,13 @@ function updateWeather(weatherObject) {
     // outputting whole weather object to console
     console.log(weatherObject);
 
+    // update location name
+    let locationName = weatherObject.location.name;
+    if (weatherObject.location.region) {
+        locationName += ", " + weatherObject.location.region;
+    }
+    document.querySelector("#location").innerHTML = locationName;
+
     // update current weather temp, status, humidity
     document.querySelector("#currentTemp span").innerHTML = weatherObject.current.temp_f;
     document.querySelector("#currentStatus").innerHTML = weatherObject.current.condition.text;

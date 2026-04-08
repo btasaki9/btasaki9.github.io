@@ -24,8 +24,8 @@ main {
     position: relative;
     width: 100vw;
     height: 100vh;
-    background-color: lightskyblue;
-    color: white;
+    background-color: #636154;
+    color: #ffb748;
     text-shadow: 1px 1px 2px black;
    
 
@@ -57,23 +57,22 @@ main {
 
 #currentTemp {
     font-size: 22vw;
-    color: #a8e6f1;
+    color: #6ac6f9;
 
 }
 
 #currentStatus {
     position: absolute;
     bottom: 3rem;
-    
+    color: white;
     font-size: 10vw;
 }
 
 #location {
     position: absolute;
-    top: 3rem;
+    top: 4rem;
     font-size: 9vw;
-    
-    
+    color: white;
 }
 
 
@@ -117,19 +116,21 @@ main {
 #currentWind {
     position: relative;
     grid-area: currentwind;
-    color: #ffb748;
+    color: #5de24b;
     /*text-shadow: 2px 2px 3px rgb(52, 69, 199);*/
     display: flex;
     align-items: center;      /* centers vertically */
     justify-content: center;
     font-size: 5vw;
     background-image: url(images/dandelion--taraxacum--in-the-wind-200194596-001-5c8d4453c9e77c00014a9d5d.jpg);
+    background-color: rgba(0, 0, 0, 0.1);
+    background-blend-mode: multiply;
     background-size: cover;
     background-position: center;
     margin: .5rem; 
     margin-top: 1rem;
     margin-right: 1rem;
-     border-radius:15px;
+    border-radius:15px;
 
 }
 
@@ -139,7 +140,7 @@ main {
 #futureInfo {
     position: relative;
     grid-area: future;
-    background-color: lightskyblue;
+    background-color: #636154;
     color: #ffb748;
     overflow: auto;
     overflow-y: hidden;
@@ -165,7 +166,7 @@ main {
     text-align: center;
     padding-top: 0.7rem;
     border-radius: 15px;
-    background-color: #636154;
+    background-color: #d7d4be;
     height: 100%;
 
 
@@ -184,7 +185,15 @@ main {
 
 .futureTemp {
     top: 2rem;
-    color:#a8e6f1
+    color:#6ac6f9;
+}
+
+.futureWind {
+     color: #5de24b;
+}
+
+.futureStatus {
+    color: white; 
 }
 
 /**************modal window stuff********/
@@ -219,9 +228,23 @@ main {
 
 #findLocation{
     position: absolute;
-    top: 0;
-    right: 0;
+    top: .5rem;
+    right: .5rem;
     z-index: 999;
+    font-family: "Passion One", sans-serif;
+    height : 2.7rem;
+    width: 9rem;
+    font-size: 1.2rem;
+    border-radius: 15px;
+    background-color: #9d9c93;
+    color: white;
+}
+
+#findLocation:hover {
+    background-color: #d7d4be;
+    color: #ffb748;
+    cursor: pointer;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
 }
 
 body.showModal #modalCover,
@@ -318,9 +341,15 @@ body.showModal #modalForm {
     font-size: 12vw;
     }
 
+
     #location {
+    position: absolute;
+    top: 7rem;
     font-size: 4vw;
+    color: white;
+
     }
+      
 
     #currentStatus {
     bottom: 6rem;
