@@ -2,7 +2,7 @@
 
 /***************general layout**********/
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700;900&display=swap');
 
 :root {
     --predictionboxwidth: 70vw;
@@ -16,7 +16,7 @@
 body {
     padding: 0;
     margin: 0;
-   font-family: "Roboto", sans-serif;
+   font-family: "Passion One", sans-serif;
    
 }
 
@@ -82,7 +82,7 @@ main {
 #currentHumidity {
     position: relative;
     grid-area: currenthum;
-    color: rgb(207, 220, 243);
+    color: #ffb748;
     display: flex;
     align-items: center;      /* centers vertically */
     justify-content: center;
@@ -117,7 +117,8 @@ main {
 #currentWind {
     position: relative;
     grid-area: currentwind;
-    color: rgb(206, 198, 105);;
+    color: #ffb748;
+    /*text-shadow: 2px 2px 3px rgb(52, 69, 199);*/
     display: flex;
     align-items: center;      /* centers vertically */
     justify-content: center;
@@ -138,7 +139,8 @@ main {
 #futureInfo {
     position: relative;
     grid-area: future;
-    background-color: rgb(207, 231, 240);
+    background-color: lightskyblue;
+    color: #ffb748;
     overflow: auto;
     overflow-y: hidden;
     scrollbar-width: none;
@@ -162,6 +164,9 @@ main {
     border: 2px solid rgb(255, 255, 255);
     text-align: center;
     padding-top: 0.7rem;
+    border-radius: 15px;
+    background-color: #636154;
+    height: 100%;
 
 
     
@@ -209,6 +214,7 @@ main {
     border: 1px solid gray;
     color: black; 
     z-index: 1001;
+    border-radius: 15px;
 }
 
 #findLocation{
