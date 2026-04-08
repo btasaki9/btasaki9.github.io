@@ -104,10 +104,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // ipLookup data
     let ipLookupURL = "https://api.ipify.org/?format=json";
-    let ipLookupOptios = {};
+    let ipLookupOptions = {};
 
     // use ajax to fetch IP in JSON format
-    getData(ipLookupURL, ipLookupOptios).then(function(result) {
+    getData(ipLookupURL, ipLookupOptions).then(function(result) {
         
         // adding the IP number to the weather URL for lookup
         let weatherLookupURL = weatherUrl + result.ip;
