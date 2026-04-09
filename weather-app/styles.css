@@ -85,7 +85,7 @@ main {
     display: flex;
     align-items: center;      /* centers vertically */
     justify-content: center;
-    font-size: 8vw;
+    font-size: 15vw;
     background-image: url(images/166.jpg);
     background-size: cover;
     background-position: center;
@@ -95,15 +95,8 @@ main {
     margin-right: 1rem;
 }
 
-#currentHumidity #humidity {
-    text-align: center;
-    font-size: 7vw;
-}
 
 
-#currentHumidity b {
-    font-size: 15vw;
-}
 
 #wind {
     text-align: center;
@@ -121,7 +114,7 @@ main {
     display: flex;
     align-items: center;      /* centers vertically */
     justify-content: center;
-    font-size: 5vw;
+    font-size: 7vw;
     background-image: url(images/dandelion--taraxacum--in-the-wind-200194596-001-5c8d4453c9e77c00014a9d5d.jpg);
     background-color: rgba(0, 0, 0, 0.1);
     background-blend-mode: multiply;
@@ -348,11 +341,11 @@ body.showModal #modalForm {
     }
 
     #currentHumidity {
-    font-size: 8vw;
+    font-size: 13vw;
     }
 
     #currentWind {
-    font-size: 5vw;
+    font-size: 7vw;
     }
 
     /* humidity labels removed */
