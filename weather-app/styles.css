@@ -224,7 +224,40 @@ main {
     color: black; 
     z-index: 1001;
     border-radius: 15px;
+    align-items: center;
+}
 
+#locationForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    justify-content: center;
+}
+
+#locationForm input {
+    font-size: 2rem;
+    padding: 0.5rem;
+    width: 90%;
+    margin-bottom: 4rem;
+    border-radius: 15px;
+}
+
+#locationForm button {
+    font-size: 2rem;
+    padding: 0.5rem 1rem;
+    width: 40%;
+    border-radius: 15px;
+    font-family: "Passion One", sans-serif;
+    color: white;
+    background-color: #9d9c93;
+
+}
+#locationForm button:hover {
+    background-color: #d7d4be;
+    color: #ffb748;
+    cursor: pointer;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
 }
 
 #findLocation{
@@ -376,6 +409,8 @@ body.showModal #modalForm {
 
     }
 }
+
+
 
 
 
