@@ -52,12 +52,12 @@ function updateWeather(weatherObject) {
     document.querySelector("#currentStatus").innerHTML = weatherObject.current.condition.text;
     document.querySelector("#currentHumidity span").innerHTML = weatherObject.current.humidity;
 
-    // output wind speed and direction in a combined string
+    // outputs wind speed and direction in a combined string
     let windspeed = weatherObject.current.wind_mph;
     let winddirection = weatherObject.current.wind_dir;
     document.querySelector("#currentWind").innerHTML = windspeed + "mph " + winddirection;
 
-    // find all the future day blocks and loop through them, matching the forecast days in the weather 
+    // finds all the future day blocks and loop through them, matching the forecast days in the weather 
     let futureDays = document.querySelectorAll(".futureDay");
     for (i = 0; i < futureDays.length; i++) {
 
@@ -131,7 +131,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // stop form from submitting to server
 	    event.preventDefault();
-
+　　　　　
+        //gets the value of the location box
         document.body.classList.toggle("showModal");
         let newLocation = document.querySelector("#locationBox").value;
 

@@ -1,0 +1,1 @@
+//js for the game search app
