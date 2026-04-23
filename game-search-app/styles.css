@@ -7,7 +7,7 @@ body {
     padding: 20px;
 }
 h1 {
-    color: #333;
+    color: white;
     text-align: center;
 }
 
@@ -16,5 +16,27 @@ h1 {
     justify-content: center;
     gap: 10px;
     margin-top: 15px;
-    width: 50%;
+    width: 100%;
+}
+#search-input {
+    font-size: 15px;
+    width: 35vh;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #D9D9D9;
+}
+#search-button {
+    font-size: 15px;
+    background-color: #333;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 11vh;
+}
+
+/* results styles */
+
+#results {
+    margin: 6vh 1.3vh 1vh 1.3vh;
+    color: white;
 }
