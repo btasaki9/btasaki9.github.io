@@ -1,14 +1,20 @@
 /* styles for the game search app */
+/* font*/
+@import url('https://fonts.googleapis.com/css2?family=Coral+Pixels&family=Felipa&family=Germania+One&family=Jersey+10&family=Jersey+10+Charted&family=Passion+One:wght@400;700;900&display=swap');
+
+
 
 /* header styles */
 body {
-    background-color: #195953;
+    background-color: #43beb1;
     margin: 0;
     padding: 20px;
 }
 h1 {
     color: white;
     text-align: center;
+    font-family: "Jersey 10", sans-serif;
+    font-size: 3rem;
 }
 
 #search-form {

@@ -1,27 +1,14 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-   <!-- meta tags and title -->
-
-
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Game Search App</title>
-
-
-   <!-- external and internal CSS  -->
    <link rel="stylesheet" href="styles.css">
-
-   <!-- external and internal JavaScript  -->
    <script src="scripts.js" defer></script>
 </head>
 
-
-
-
 <body>
-   <!-- html elements here -->
    <div id="header">
       <h1>Game-Search.com</h1>
       <form id="search-form">
@@ -31,39 +18,18 @@
    </div>
 
    <div id="results">
-      <!-- search results will be displayed here -->
-      <div id="title">
-         <h2>Ocarina of Time</h2>
-      </div>
+      <h2 id="game-title"></h2>
 
       <div id="details">
-         <div id="info">
-            <div id="date">
-               <h3>Release Date</h3>
-               <p>November 21, 1998</p>
-            </div>
-            <div id="ratings">
-               <h3>Ratings</h3>
-               <p>9.5/10</p>
-            </div>
-            <div id="developer">
-               <h3>Developer</h3>
-               <p>Nintendo</p>
-            </div>
-            <div id="rating">
-               <h3>Rating</h3>
-               <p>E</p>
-            </div>
+         <div id="date">
+            <h3>Release Date</h3>
+            <p id="game-released"></p>
          </div>
-
-         <div id="image">
-            <img src="https://via.placeholder.com/300x400" alt="Game cover image">
+         <div id="ratings">
+            <h3>Metacritic Score</h3>
+            <p id="game-score"></p>
          </div>
-      </div>
-
-      <div id="description">
-         <h3>Overview</h3>
-         <p>Ocarina of Time is an action-adventure game developed and published by Nintendo for the Nintendo 64. It was released in 1998 and is widely regarded as one of the greatest video games of all time. The game follows the protagonist, Link, as he embarks on a quest to stop the evil Ganondorf from obtaining the Triforce, a powerful artifact that grants its holder ultimate power.</p>
       </div>
    </div>
 </body>
+</html>
