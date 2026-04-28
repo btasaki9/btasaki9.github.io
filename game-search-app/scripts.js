@@ -45,6 +45,8 @@ async function displayGame(name) {
    document.getElementById("game-released").textContent = game.released ?? "Unknown";
    // Set the Metacritic score, formatting it or showing "N/A" if not available
    document.getElementById("game-score").textContent    = game.metacritic ? game.metacritic + " / 100" : "N/A";
+   // Set the game cover image, using a placeholder if no image is available
+   document.getElementById("game-cover").src = game.background_image ?? "https://via.placeholder.com/300x400";
 }
 
 // Event listener for the search form submission
