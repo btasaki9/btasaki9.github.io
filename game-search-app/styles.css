@@ -62,13 +62,15 @@ h1 {
 #results {
     margin: 6vh 1.3vh 1vh 1.3vh;
     color: white;
+    background-color: #F7EDE2;
+    border-radius: 15px;
 }
 
 h2  {
      font-family: "Special Gothic Expanded One", sans-serif;
 }
  h3 {
-    font-family: "Special Gothic Expanded One", sans-serif;ont-family: "Special Gothic Expanded One", sans-serif;
+    font-family: "Special Gothic Expanded One", sans-serif;
  }
 
 #details {
