@@ -2,13 +2,17 @@
 /* font*/
 @import url('https://fonts.googleapis.com/css2?family=Coral+Pixels&family=Felipa&family=Germania+One&family=Jersey+10&family=Jersey+10+Charted&family=Passion+One:wght@400;700;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Coral+Pixels&family=Felipa&family=Germania+One&family=Jersey+10&family=Jersey+10+Charted&family=Passion+One:wght@400;700;900&family=Zen+Dots&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Coral+Pixels&family=Felipa&family=Germania+One&family=Jersey+10&family=Jersey+10+Charted&family=Passion+One:wght@400;700;900&family=Special+Gothic+Expanded+One&family=Zen+Dots&display=swap');
 
 /* header styles */
 body {
     background-color: #3c9c93;
     margin: 0;
-    padding: 20px;
+    padding: 4vh;
+}
+
+#header {
+    margin: 0%;
 }
 h1 {
     color: white;
@@ -17,11 +21,18 @@ h1 {
     font-size: 3rem;
 }
 
+#search {
+    background-color: #84A59D;
+    padding: 1rem;
+    border-radius: 15px;
+    padding-top: 4vh;
+    padding-bottom: 4vh;
+}
+
 #search-form {
     display: flex;
     justify-content: center;
     gap: 10px;
-    margin-top: 15px;
     width: 100%;
 }
 #search-input {
@@ -52,6 +63,13 @@ h1 {
     margin: 6vh 1.3vh 1vh 1.3vh;
     color: white;
 }
+
+h2  {
+     font-family: "Special Gothic Expanded One", sans-serif;
+}
+ h3 {
+    font-family: "Special Gothic Expanded One", sans-serif;ont-family: "Special Gothic Expanded One", sans-serif;
+ }
 
 #details {
     display: grid;
@@ -99,6 +117,7 @@ p {
 
     body {
         padding-left: 10vh;
+        padding-right: 10vh;
     }
 
     h1 { 
