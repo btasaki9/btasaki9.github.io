@@ -6,7 +6,7 @@
 
 /* header styles */
 body {
-    background-color: #3c9c93;
+    background-color: #F5EFFF;
     margin: 0;
     padding: 4vh;
 }
@@ -15,14 +15,14 @@ body {
     margin: 0%;
 }
 h1 {
-    color: white;
+    color: #7371FC;
     text-align: center;
     font-family: "Jersey 10", sans-serif;
     font-size: 3rem;
 }
 
 #search {
-    background-color: #84A59D;
+    background-color: #CDC1FF;
     padding: 1rem;
     border-radius: 15px;
     padding-top: 4vh;
@@ -44,7 +44,7 @@ h1 {
 }
 #search-button {
     font-size: 15px;
-    background-color: #f28482;
+    background-color: #7371FC;
     color: #fff;
     border-radius: 5px;
     cursor: pointer;
@@ -62,7 +62,7 @@ h1 {
 #results {
     margin: 6vh 0vh 1vh 0vh;
     color: white;
-    background-color: #84A59D;
+    background-color: #CDC1FF;
     border-radius: 15px;
     padding: 2vh;
     
@@ -70,10 +70,12 @@ h1 {
 
 h2  {
      font-family: "Special Gothic Expanded One", sans-serif;
+     color: #7371FC
 }
 
  h3 {
     font-family: "Special Gothic Expanded One", sans-serif;
+    color: #7371FC
  }
 
 #details {
