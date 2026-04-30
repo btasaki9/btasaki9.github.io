@@ -60,16 +60,18 @@ h1 {
 /* results styles */
 
 #results {
-    margin: 6vh 1.3vh 1vh 1.3vh;
+    margin: 6vh 0vh 1vh 0vh;
     color: white;
     background-color: #84A59D;
     border-radius: 15px;
     padding: 2vh;
+    
 }
 
 h2  {
      font-family: "Special Gothic Expanded One", sans-serif;
 }
+
  h3 {
     font-family: "Special Gothic Expanded One", sans-serif;
  }

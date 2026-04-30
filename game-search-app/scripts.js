@@ -4,6 +4,8 @@
 // API configuration constants
 //  API key for accessing RAWG game database
 const API_KEY = "adeda8483eb742b2bbb59a24e6326b8d";
+// API key for accessing OpenCritic via RapidAPI
+const OPENCRITIC_KEY = "3933a62283msh6859f42dfe04d17p1da7cajsn41b441386073; //
 //  URL for RAWG API endpoints
 const BASE_URL = "https://api.rawg.io/api";
 
@@ -27,6 +29,29 @@ async function getGameDetails(gameId) {
    return await res.json();
 }
 
+// *** NEW *** Search OpenCritic for a game by name
+async function searchOpenCritic(gameName) {
+   const res = await fetch(`https://opencritic-api.p.rapidapi.com/game/search?criteria=${encodeURIComponent(gameName)}`, {
+      headers: {
+         "x-rapidapi-host": "opencritic-api.p.rapidapi.com",
+         "x-rapidapi-key": OPENCRITIC_KEY
+      }
+   });
+   const data = await res.json();
+   return data[0];
+}
+
+// *** NEW *** Get OpenCritic score details using game ID
+async function getOpenCriticDetails(gameId) {
+   const res = await fetch(`https://opencritic-api.p.rapidapi.com/game/${gameId}`, {
+      headers: {
+         "x-rapidapi-host": "opencritic-api.p.rapidapi.com",
+         "x-rapidapi-key": OPENCRITIC_KEY
+      }
+   });
+   return await res.json();
+}
+
 // Function to display game information in the UI
 // Takes a game name, searches for it, and updates the DOM with the results
 async function displayGame(name) {
@@ -34,6 +59,12 @@ async function displayGame(name) {
    const results = await searchGame(name);
    // If no games found, show an alert and exit
    if (!results.length) return alert("Game not found!");
+
+   //  get details from both APIs at the same time
+   const [game, ocDetails] = await Promise.all([
+      getGameDetails(results[0].id),
+      getOpenCriticDetails(ocResult.id)
+   ]);
 
    // Get detailed information for the first search result
    const game = await getGameDetails(results[0].id);
