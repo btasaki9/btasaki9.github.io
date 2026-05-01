@@ -47,36 +47,41 @@ async function getOpenCriticDetails(gameId) {
 
 // Function to display game information in the UI
 async function displayGame(name) {
-   // *** NEW *** fetch both APIs at the same time
-   const [results, ocResult] = await Promise.all([
-      searchGame(name),
-      searchOpenCritic(name)
-   ]);
+   try {
+      // *** NEW *** fetch both APIs at the same time
+      const [results, ocResult] = await Promise.all([
+         searchGame(name),
+         searchOpenCritic(name).catch(() => null) // Handle OpenCritic failure gracefully
+      ]);
 
-   if (!results.length) return alert("Game not found!");
+      if (!results.length) return alert("Game not found!");
 
-   // *** NEW *** get details from both APIs at the same time
-   const [game, ocDetails] = await Promise.all([
-      getGameDetails(results[0].id),
-      getOpenCriticDetails(ocResult.id)
-   ]);
+      // *** NEW *** get details from both APIs at the same time
+      const gamePromise = getGameDetails(results[0].id);
+      const ocPromise = ocResult ? getOpenCriticDetails(ocResult.id).catch(() => null) : Promise.resolve(null);
 
-   // Set the game title in the h2 element
-   document.getElementById("game-title").textContent    = game.name;
-   // Set the release date, using "Unknown" if not available
-   document.getElementById("game-released").textContent = game.released ?? "N/A";
-   // Set the Metacritic score, formatting it or showing "N/A" if not available
-   document.getElementById("game-metacritic").textContent = game.metacritic ? game.metacritic + " / 100" : "N/A";
-   // Set the game cover image, using a placeholder if no image is available
-   document.getElementById("game-cover").src            = game.background_image ?? "https://via.placeholder.com/300x400";
-   // *** NEW *** Set the OpenCritic average score
-   document.getElementById("game-opencritic").textContent = ocDetails.averageScore ? Math.round(ocDetails.averageScore) + " / 100" : "N/A";
-   // esrb rating 
-   document.getElementById("game-esrb").textContent = game.esrb_rating?.name ?? "N/A";
-   //developers 
-   document.getElementById("game-developer").textContent = game.developers[0]?.name ?? "N/A";
-   //overview 
-   document.getElementById("game-overview").textContent = game.description_raw ?? "No overview available.";
+      const [game, ocDetails] = await Promise.all([gamePromise, ocPromise]);
+
+      // Set the game title in the h2 element
+      document.getElementById("game-title").textContent    = game.name;
+      // Set the release date, using "Unknown" if not available
+      document.getElementById("game-released").textContent = game.released ?? "N/A";
+      // Set the Metacritic score, formatting it or showing "N/A" if not available
+      document.getElementById("game-metacritic").textContent = game.metacritic ? game.metacritic + " / 100" : "N/A";
+      // Set the game cover image, using a placeholder if no image is available
+      document.getElementById("game-cover").src            = game.background_image ?? "https://via.placeholder.com/300x400";
+      // *** NEW *** Set the OpenCritic average score
+      document.getElementById("game-opencritic").textContent = ocDetails?.averageScore ? Math.round(ocDetails.averageScore) + " / 100" : "N/A";
+      // esrb rating 
+      document.getElementById("game-esrb").textContent = game.esrb_rating?.name ?? "N/A";
+      //developers 
+      document.getElementById("game-developer").textContent = game.developers?.[0]?.name ?? "N/A";
+      //overview 
+      document.getElementById("game-overview").textContent = game.description_raw ?? "No overview available.";
+   } catch (error) {
+      console.error("Error fetching game data:", error);
+      alert("An error occurred while fetching game data. Please try again.");
+   }
 }
 
 // Event listener for the search form submission
