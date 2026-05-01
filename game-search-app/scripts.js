@@ -64,13 +64,19 @@ async function displayGame(name) {
    // Set the game title in the h2 element
    document.getElementById("game-title").textContent    = game.name;
    // Set the release date, using "Unknown" if not available
-   document.getElementById("game-released").textContent = game.released ?? "Unknown";
+   document.getElementById("game-released").textContent = game.released ?? "N/A";
    // Set the Metacritic score, formatting it or showing "N/A" if not available
    document.getElementById("game-metacritic").textContent = game.metacritic ? game.metacritic + " / 100" : "N/A";
    // Set the game cover image, using a placeholder if no image is available
    document.getElementById("game-cover").src            = game.background_image ?? "https://via.placeholder.com/300x400";
    // *** NEW *** Set the OpenCritic average score
    document.getElementById("game-opencritic").textContent = ocDetails.averageScore ? Math.round(ocDetails.averageScore) + " / 100" : "N/A";
+   // esrb rating 
+   document.getElementById("game-esrb").textContent = game.esrb_rating?.name ?? "N/A";
+   //developers 
+   document.getElementById("game-developer").textContent = game.developers[0]?.name ?? "N/A";
+   //overview 
+   document.getElementById("game-overview").textContent = game.description_raw ?? "No overview available.";
 }
 
 // Event listener for the search form submission

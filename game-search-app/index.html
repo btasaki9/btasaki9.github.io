@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,7 +14,7 @@
       <h1>Game-Search.com</h1>
    </div>
    <div id="search">
-       <form id="search-form">
+      <form id="search-form">
          <input type="text" id="search-input" placeholder="Search for games...">
          <button type="submit" id="search-button">Search</button>
       </form>
@@ -23,9 +24,16 @@
       <h2 id="game-title"></h2>
 
       <div id="details">
+         <div id="developer">
+            <h3>Developer</h3>
+            <p id="game-developer"></p>
          <div id="date">
             <h3>Release Date</h3>
             <p id="game-released"></p>
+         </div>
+         <div id="esrb">
+            <h3>ESRB Rating</h3>
+            <p id="game-esrb"></p>
          </div>
          <div id="ratings">
             <div id="metacritic-rating">
@@ -37,10 +45,18 @@
                <p id="game-opencritic"></p>
             </div>
          </div>
+         
+         <div id="2nd-column">
          <div id="image">
             <img id="game-cover" src="" alt="Game cover image">
          </div>
+         <div id="overview">
+            <h3>Overview</h3>
+            <p id="game-overview"></p>
+         </div>
+         
       </div>
    </div>
 </body>
+
 </html>
