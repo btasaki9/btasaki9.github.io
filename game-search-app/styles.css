@@ -26,14 +26,14 @@ h1 {
     white-space: nowrap; */
 }
 
-@keyframes slide-right {
+/* @keyframes slide-right {
     0% {
         transform: translateX(-100%);
     }
     100% {
         transform: translateX(100vw);
     }
-}
+} */
 
 #search {
     background-color: #CDC1FF;

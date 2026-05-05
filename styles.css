@@ -30,7 +30,8 @@ section {
     border-radius: 1rem;    
     background-color: #FAEFE1;
     transition: all 1s;
-    /*overflow: scroll;*/
+    overflow: scroll;
+    border: 7px solid #3ba0ce;
 
 }
 
@@ -43,6 +44,9 @@ h1 {
     font-size: 5rem;
     line-height: 0.9em;
     color: #225D7D;
+    display: inline-block;
+    animation: slide-right 8s linear infinite;
+    white-space: nowrap;
 }
 
 h2 {
@@ -52,13 +56,26 @@ h2 {
 header {
     display: flex;
     align-items: center;
+    justify-content: center;
     padding-top: 2rem;
     padding-bottom: 2rem;
+    overflow: hidden;
+    width: 70%;
+    margin: 0 auto;
 }
 
 header h1 {
     flex-grow: 1;
     text-align: center;
+}
+
+@keyframes slide-right {
+    0% {
+        transform: translateX(-70vw);
+    }
+    100% {
+        transform: translateX(70vw);
+    }
 }
 
 main {
