@@ -31,7 +31,7 @@ section {
     background-color: #FAEFE1;
     transition: all 1s;
     overflow: scroll;
-    border: 7px solid #3ba0ce;
+    border: 7px solid #348eb7;
 
 }
 
@@ -71,10 +71,10 @@ header h1 {
 
 @keyframes slide-right {
     0% {
-        transform: translateX(-70vw);
+        transform: translateX(70vw);
     }
     100% {
-        transform: translateX(70vw);
+        transform: translateX(-70vw);
     }
 }
 
