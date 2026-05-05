@@ -70,6 +70,8 @@ async function displayGame(name) {
       document.getElementById("game-metacritic").textContent = game.metacritic ? game.metacritic + " / 100" : "N/A";
       // Set the game cover image, using a placeholder if no image is available
       document.getElementById("game-cover").src            = game.background_image ?? "https://via.placeholder.com/300x400";
+      // Show the image container after search
+      document.getElementById("image").style.display = "flex";
       // *** NEW *** Set the OpenCritic average score
       document.getElementById("game-opencritic").textContent = ocDetails?.averageScore ? Math.round(ocDetails.averageScore) + " / 100" : "N/A";
       // esrb rating 

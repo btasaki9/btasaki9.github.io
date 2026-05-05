@@ -74,11 +74,12 @@ h1 {
 /* results styles */
 
 #results {
-    margin: 6vh 0vh 1vh 0vh;
+    margin: 8vh 0vh 1vh 0vh;
     color: white;
     background-color: #CDC1FF;
     border-radius: 15px;
     padding: 2vh;
+
     
 }
 
@@ -97,6 +98,7 @@ h2  {
     grid-template-columns: 1fr;
     gap: 24px;
     align-items: start;
+    margin-top: 4vh;
 }
 
 #info {
@@ -115,6 +117,7 @@ h2  {
     width: 100%;
     display: flex;
     justify-content: center;
+    display: none; /* Hide image by default */
 }
 
 #image img {
