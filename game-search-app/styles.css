@@ -74,7 +74,7 @@ h1 {
 /* results styles */
 
 #results {
-    margin: 8vh 0vh 1vh 0vh;
+    margin: 5vh 0vh 1vh 0vh;
     color: white;
     background-color: #CDC1FF;
     border-radius: 15px;
@@ -102,7 +102,11 @@ h2  {
 }
 
 #info {
-    width: 100%;
+    margin: 5vh 0vh 1vh 0vh;
+    color: white;
+    background-color: #CDC1FF;
+    border-radius: 15px;
+    padding: 2vh;
 }
 
 #right-column {
@@ -132,6 +136,10 @@ h2  {
 
 p {
      font-family: "Zen Dots", sans-serif;
+     color: black;
+}
+#info {
+    background-color: ;
 }
 
 
@@ -139,8 +147,36 @@ p {
    @media (min-width: 1000px) {
 
     body {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "header header"
+            "search search"
+            "info results";
+        gap: 2rem;
         padding-left: 10vh;
         padding-right: 10vh;
+    }
+
+    #header {
+        grid-area: header;
+    }
+
+    #search {
+        grid-area: search;
+        padding: 5vh;
+    }
+
+    #results {
+        grid-area: info;
+        padding: 5vh;
+        margin-top: 2vh;
+    }
+
+    #info {
+        grid-area: results;
+        padding: 5vh;
+        margin-top: 2vh;
     }
 
     h1 { 
