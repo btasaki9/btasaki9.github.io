@@ -6,7 +6,7 @@
 
 /* header styles */
 body {
-    background-color: #F5EFFF;
+    background-color: #211d28;
     margin: 0;
     padding: 4vh;
 }
@@ -16,6 +16,7 @@ body {
     overflow: hidden;
     position: relative;
 }
+
 h1 {
     color: #7371FC;
     text-align: center;
@@ -49,6 +50,7 @@ h1 {
     gap: 10px;
     width: 100%;
 }
+
 #search-input {
     font-size: 15px;
     width: 35vh;
@@ -56,6 +58,7 @@ h1 {
     border-radius: 4px;
     background-color: #F5EFFF;
 }
+
 #search-button {
     font-size: 15px;
     background-color: #7371FC;
@@ -80,18 +83,18 @@ h1 {
     border-radius: 15px;
     padding: 2vh;
 
-    
+
 }
 
-h2  {
-     font-family: "Special Gothic Expanded One", sans-serif;
-     color: #765995;
-}
-
- h3 {
+h2 {
     font-family: "Special Gothic Expanded One", sans-serif;
     color: #765995;
- }
+}
+
+h3 {
+    font-family: "Special Gothic Expanded One", sans-serif;
+    color: #765995;
+}
 
 #details {
     display: grid;
@@ -121,7 +124,8 @@ h2  {
     width: 100%;
     display: flex;
     justify-content: center;
-    display: none; /* Hide image by default */
+    display: none;
+    /* Hide image by default */
 }
 
 #image img {
@@ -135,16 +139,17 @@ h2  {
 /* result styles */
 
 p {
-     font-family: "Zen Dots", sans-serif;
-     color: black;
+    font-family: "Zen Dots", sans-serif;
+    color: black;
 }
+
 #info {
     background-color: ;
 }
 
 
 /* desktop  */
-   @media (min-width: 1000px) {
+@media (min-width: 1000px) {
 
     body {
         display: grid;
@@ -171,6 +176,7 @@ p {
         grid-area: info;
         padding: 5vh;
         margin-top: 2vh;
+
     }
 
     #info {
@@ -179,12 +185,12 @@ p {
         margin-top: 2vh;
     }
 
-    h1 { 
+    h1 {
         font-size: 4rem;
         text-align: left;
     }
 
-    #search-form{
+    #search-form {
         justify-content: flex-start;
     }
 
@@ -201,4 +207,34 @@ p {
         align-items: flex-start;
     }
 
-   } 
+    /* results and info styles */
+    h2 {
+        font-size: 1.7rem;
+        padding-bottom: 1vh;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 1.2rem;
+    }
+
+    #image {
+        width: 100%;
+        display: flex;
+        justify-content: left;
+        display: none;
+        /* Hide image by default */
+    }
+
+    #image img {
+        width: 100%;
+        max-width: 410px;
+        height: auto;
+        display: block;
+
+    }
+
+}

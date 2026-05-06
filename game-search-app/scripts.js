@@ -1,11 +1,9 @@
 // JavaScript code for the Game Search App
-// This script handles user interactions, API calls to RAWG.io and OpenCritic, and updating the DOM with game information
+// This script handles user interactions, API calls to RAWG.io, and updating the DOM with game information
 
 // API configuration constants
 // API key for accessing RAWG game database
 const API_KEY = "adeda8483eb742b2bbb59a24e6326b8d";
-// *** NEW ***
-const OPENCRITIC_KEY = "3933a62283msh6859f42dfe04d17p1da7cajsn41b441386073";
 // URL for RAWG API endpoints
 const BASE_URL = "https://api.rawg.io/api";
 
@@ -22,45 +20,14 @@ async function getGameDetails(gameId) {
    return await res.json();
 }
 
-// *** NEW *** Search OpenCritic for a game by name
-async function searchOpenCritic(gameName) {
-   const res = await fetch(`https://opencritic-api.p.rapidapi.com/game/search?criteria=${encodeURIComponent(gameName)}`, {
-      headers: {
-         "x-rapidapi-host": "opencritic-api.p.rapidapi.com",
-         "x-rapidapi-key": OPENCRITIC_KEY
-      }
-   });
-   const data = await res.json();
-   return data[0];
-}
-
-// *** NEW *** Get OpenCritic score details using game ID
-async function getOpenCriticDetails(gameId) {
-   const res = await fetch(`https://opencritic-api.p.rapidapi.com/game/${gameId}`, {
-      headers: {
-         "x-rapidapi-host": "opencritic-api.p.rapidapi.com",
-         "x-rapidapi-key": OPENCRITIC_KEY
-      }
-   });
-   return await res.json();
-}
-
 // Function to display game information in the UI
 async function displayGame(name) {
    try {
-      // *** NEW *** fetch both APIs at the same time
-      const [results, ocResult] = await Promise.all([
-         searchGame(name),
-         searchOpenCritic(name).catch(() => null) // Handle OpenCritic failure gracefully
-      ]);
+      const results = await searchGame(name);
 
       if (!results.length) return alert("Game not found!");
 
-      // *** NEW *** get details from both APIs at the same time
-      const gamePromise = getGameDetails(results[0].id);
-      const ocPromise = ocResult ? getOpenCriticDetails(ocResult.id).catch(() => null) : Promise.resolve(null);
-
-      const [game, ocDetails] = await Promise.all([gamePromise, ocPromise]);
+      const game = await getGameDetails(results[0].id);
 
       // Set the game title in the h2 element
       document.getElementById("game-title").textContent    = game.name;
@@ -72,8 +39,6 @@ async function displayGame(name) {
       document.getElementById("game-cover").src            = game.background_image ?? "https://via.placeholder.com/300x400";
       // Show the image container after search
       document.getElementById("image").style.display = "flex";
-      // *** NEW *** Set the OpenCritic average score
-      document.getElementById("game-opencritic").textContent = ocDetails?.averageScore ? Math.round(ocDetails.averageScore) + " / 100" : "N/A";
       // esrb rating 
       document.getElementById("game-esrb").textContent = game.esrb_rating?.name ?? "N/A";
       //developers 
