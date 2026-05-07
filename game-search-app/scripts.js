@@ -20,6 +20,52 @@ async function getGameDetails(gameId) {
    return await res.json();
 }
 
+// Shows a dropdown list of game suggestions below the search bar
+function showSuggestions(games) {
+   removeSuggestions();
+   if (!games.length) return;
+
+   const dropdown = document.createElement("ul");
+   dropdown.id = "suggestions";
+
+   games.forEach(game => {
+      const item = document.createElement("li");
+      item.textContent = game.name;
+      item.addEventListener("click", () => {
+         document.getElementById("search-input").value = game.name;
+         removeSuggestions();
+         displayGame(game.name);
+      });
+      dropdown.appendChild(item);
+   });
+
+   document.getElementById("search").appendChild(dropdown);
+}
+
+// Removes the dropdown from the page
+function removeSuggestions() {
+   const existing = document.getElementById("suggestions");
+   if (existing) existing.remove();
+}
+
+// Fires every time the user types in the search bar
+let debounceTimer;
+document.getElementById("search-input").addEventListener("input", function() {
+   const query = this.value.trim();
+   clearTimeout(debounceTimer);
+   if (!query) return removeSuggestions();
+
+   debounceTimer = setTimeout(async () => {
+      const results = await searchGame(query);
+      showSuggestions(results.slice(0, 6));
+   }, 300);
+});
+
+// Closes the dropdown if you click anywhere outside the search bar
+document.addEventListener("click", function(e) {
+   if (!e.target.closest("#search")) removeSuggestions();
+});
+
 // Function to display game information in the UI
 async function displayGame(name) {
    try {
@@ -55,5 +101,6 @@ async function displayGame(name) {
 document.getElementById("search-form").addEventListener("submit", function(e) {
    e.preventDefault();
    const query = document.getElementById("search-input").value.trim();
+    removeSuggestions();
    if (query) displayGame(query);
 });
