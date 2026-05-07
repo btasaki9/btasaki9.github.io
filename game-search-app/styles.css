@@ -181,6 +181,7 @@ p {
         grid-area: info;
         padding: 5vh;
         margin-top: 2vh;
+        padding-bottom: 7vh;
 
     }
 
@@ -212,6 +213,8 @@ p {
         align-items: flex-start;
     }
 
+
+
     /* results and info styles */
     h2 {
         font-size: 1.7rem;
@@ -239,8 +242,8 @@ p {
         max-width: 410px;
         height: auto;
         display: block;
-    
 
     }
+
 
 }
