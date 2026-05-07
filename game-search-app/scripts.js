@@ -77,11 +77,11 @@ async function displayGame(name) {
 
       // Set the game title in the h2 element
       document.getElementById("game-title").textContent    = game.name;
-      // Set the release date, using "Unknown" if not available
+      // Set the release date, using N/A if not available
       document.getElementById("game-released").textContent = game.released ?? "N/A";
-      // Set the Metacritic score, formatting it or showing "N/A" if not available
+      // Set the Metacritic score, formatting it or showing N/A if not available
       document.getElementById("game-metacritic").textContent = game.metacritic ? game.metacritic + " / 100" : "N/A";
-      // Set the game cover image, using a placeholder if no image is available
+      // Set the game cover image using a placeholder if no image is available
       document.getElementById("game-cover").src            = game.background_image ?? "https://via.placeholder.com/300x400";
       // Show the image container after search
       document.getElementById("image").style.display = "flex";
